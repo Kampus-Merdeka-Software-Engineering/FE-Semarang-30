@@ -1,0 +1,441 @@
+/* Universal */
+:root {
+  --primary: #36a5b2;
+  --secondary: white;
+  --third: #b24336;
+  --background: #f6f6f6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background);
+  color: var(--primary);
+  padding-top: 91.97px;
+}
+
+/* NAVBAR OVERALL */
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: var(--secondary);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  font-weight: bold;
+  top: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar Logo */
+.navbar .navbar-logo {
+  flex: 1 0 20%;
+}
+
+.navbar .navbar-logo img {
+  width: 10rem;
+}
+
+/* Navbar Link */
+.navbar .navbar-nav {
+  display: flex;
+  flex: 1 0 80%;
+  justify-content: space-between;
+}
+
+.navbar .navbar-nav .navbar-middle a {
+  color: var(--primary);
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav .navbar-middle a:hover {
+  border-bottom: var(--primary) 2px solid;
+  transition: 0.1s linear;
+}
+
+.navbar .navbar-nav .navbar-middle .active {
+  border-bottom: var(--primary) 2px solid;
+}
+
+.navbar .navbar-nav .navbar-login a {
+  color: var(--secondary);
+  background-color: var(--primary);
+  border-radius: 15px;
+  min-width: 2rem;
+  padding: 0.3rem 0.94rem;
+  font-weight: bold;
+}
+
+.navbar .navbar-nav .navbar-login a:hover {
+  color: var(--primary);
+  background-color: var(--secondary);
+  border: var(--primary) 1px solid;
+}
+
+.navbar .navbar-nav .navbar-logout a {
+  color: var(--secondary);
+  background-color: var(--primary);
+  border-radius: 15px;
+  min-width: 2rem;
+  padding: 0.3rem 0.94rem;
+  font-weight: bold;
+}
+
+.navbar .navbar-nav .navbar-logout a:hover {
+  color: var(--primary);
+  background-color: var(--secondary);
+  border: var(--primary) 1px solid;
+}
+
+/* Navbar Menu Button */
+.navbar .navbar-right {
+  display: none;
+}
+
+.navbar .navbar-right a {
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 91.97px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  opacity: 0;
+}
+
+/* FOOTER OVERALL */
+/* Footer */
+.footer {
+  padding: 0 7%;
+  padding-top: 1.87rem;
+  background-color: var(--primary);
+  display: grid;
+}
+
+/* Footer Title */
+.footer .footer-title {
+  font-weight: bold;
+}
+
+/* Footer Text */
+.footer p {
+  color: var(--secondary);
+}
+
+/* Footer Logo */
+.footer .footer-logo {
+  display: flex;
+  align-items: center;
+}
+
+/* Footer Link */
+.footer .footer-link ul {
+  list-style-type: none;
+}
+
+.footer .footer-link ul li {
+  margin-bottom: 0.62rem;
+}
+
+.footer .footer-link ul li a {
+  color: var(--secondary);
+  font-weight: normal;
+}
+
+/* Footer Contact Us and Follow Us On */
+.footer .contact-us .phone,
+.email {
+  display: flex;
+}
+
+.footer .footer-link p,
+.contact-us p,
+.follow p {
+  padding-bottom: 0.62rem;
+}
+
+.footer .contact-us .phone p,
+.email p {
+  margin: 0 0.62rem;
+}
+
+.footer .contact-us img,
+.follow img {
+  width: 1.56rem;
+  height: 1.56rem;
+}
+
+/* Footer Copyright */
+footer .copyright {
+  text-align: center;
+  grid-column: 1 / span 4;
+  font-size: 0.87rem;
+}
+
+/* Erna style */
+/* STAR OF INDEX STYLE */
+/* Style the hero section */
+.erna-hero-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  background-color: var(--primary);
+}
+.erna-hero-section .column {
+  flex: 1;
+  padding: 20px;
+}
+.erna-hero-section .column h1 {
+  font-size: 45px;
+  margin-bottom: 10px;
+  color: var(--background);
+}
+.erna-hero-section .column p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: var(--background);
+}
+.erna-hero-section .column a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--background);
+  color: var(--primary);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+}
+.erna-hero-section .column a:hover {
+  background-color: gray;
+  color: var(--background);
+}
+.erna-hero-section .column img {
+  max-width: 100%;
+  height: auto;
+}
+.erna-four-column-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 40px;
+  background-color: #f0f0f0;
+}
+.erna-four-column-section .column {
+  border-radius: 25px;
+  text-align: center;
+  flex: 1;
+  max-width: calc(25% - 20px);
+  margin: 10px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.erna-four-column-section .column .icon span {
+  font-size: 100px;
+  margin-bottom: 10px;
+}
+.erna-four-column-section .column h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.erna-carousel-container {
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+  text-align: center;
+  padding: 50px 0;
+  background-color: #fff;
+}
+.erna-carousel-container .carousel {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+  margin-top: 20px;
+}
+.erna-carousel-container .carousel .service {
+  flex: 0 0 100%;
+  text-align: center;
+  padding: 20px;
+  /* border: 1px solid #ccc; */
+  box-sizing: border-box;
+}
+.erna-carousel-container .carousel .service img {
+  max-width: 100%;
+  /* height: auto; */
+  max-height: 75%;
+  object-fit: cover;
+  border-radius: 25px;
+}
+.erna-carousel-container .carousel .service h3 {
+  margin-top: 10px;
+}
+/* END OF INDEX STYLE */
+
+/* Media Queries */
+/* Small Screen desktop/laptop */
+@media (max-width: 1199.98px) {
+}
+
+/* Large Tablet */
+@media (max-width: 991.98px) {
+  /* Navbar */
+  .navbar .navbar-right {
+    display: block;
+  }
+
+  .navbar .navbar-nav {
+    position: fixed;
+    inset: calc(100% - 91.97px) 0 0 40%;
+    top: 91.97px;
+    flex-direction: column;
+    gap: 20px;
+    background: var(--secondary);
+    justify-content: initial;
+    padding: 1em;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: transform 50ms ease-in;
+  }
+
+  .navbar-nav[data-visible="true"] {
+    transform: translateX(0%);
+  }
+
+  .overlay {
+    display: block;
+    z-index: 999;
+    transform: translateX(-100%);
+    transition: transform 50ms ease-in, opacity 50ms linear;
+  }
+
+  .overlay[data-visible="true"] {
+    opacity: 0.5;
+    transform: translateX(0%);
+  }
+
+  .navbar .navbar-nav .navbar-middle a {
+    margin: 0.3rem 0;
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 15px;
+  }
+
+  .navbar .navbar-nav .navbar-middle a:hover {
+    background-color: var(--primary);
+    color: var(--secondary);
+    border: none;
+  }
+
+  .navbar .navbar-nav .navbar-middle .active {
+    background-color: var(--primary);
+    color: var(--secondary);
+    border: none;
+  }
+
+  .navbar .navbar-nav .navbar-login a {
+    text-align: center;
+    border-radius: 15px;
+    display: block;
+    color: var(--secondary);
+  }
+
+  .navbar .navbar-nav .navbar-login a:hover {
+    color: var(--primary);
+    background-color: var(--secondary);
+  }
+
+  .navbar .navbar-nav .navbar-logout a {
+    text-align: center;
+    border-radius: 15px;
+    display: block;
+    color: var(--secondary);
+  }
+
+  .navbar .navbar-nav .navbar-logout a:hover {
+    color: var(--primary);
+    background-color: var(--secondary);
+
+    /* Footer */
+    .footer .footer-logo {
+      grid-column: 1 / span 3;
+      justify-content: center;
+    }
+
+    .footer .copyright {
+      grid-column: 1 / span 3;
+    }
+  }
+}
+
+/* Tablet */
+@media (max-width: 767.98px) {
+  /* ERNA STYLE */
+  /* START OF INDEX STYLE */
+  .erna-hero-section {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .erna-hero-section .column {
+    flex: none;
+    width: 100%;
+    padding: 0;
+  }
+
+  .erna-four-column-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .erna-four-column-section .column {
+    flex: none;
+    width: 100%;
+    padding: 0;
+    max-width: 90%;
+  }
+  /* END OF INDEX STYLE */
+}
+
+/* Mobile */
+@media (max-width: 575.98px) {
+  .footer {
+    display: block;
+  }
+
+  .footer .footer-link,
+  .contact-us,
+  .follow {
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-link {
+    font-size: 0.8rem;
+  }
+
+  .footer .footer-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .footer .contact-us .phone p,
+  .email p {
+    font-size: 0.8rem;
+  }
+}
