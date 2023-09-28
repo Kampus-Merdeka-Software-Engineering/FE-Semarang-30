@@ -289,9 +289,216 @@ footer .copyright {
 
 /* SILAKAN DITAMBAHKAN DI BAWAH SINI */
 
+/* Hero */
+.hero {
+  display: flex;
+  padding: 0 7%;
+  background-color: var(--primary);
+  justify-content: space-between;
+  align-items: center;
+  max-height: 50vh;
+  overflow: visible;
+}
+
+.hero h1 {
+  color: var(--secondary);
+  font-size: 4rem;
+}
+
+.hero img {
+  margin-top: 4%;
+  width: 60vh;
+}
+
+/* What to Do */
+.what-to-do {
+  padding: 0 7%;
+  margin: 4.68rem 0 0;
+}
+
+.what-to-do .title {
+  text-align: center;
+}
+
+.what-to-do .title h2 {
+  font-size: 2.75rem;
+  font-weight: bold;
+}
+
+.what-to-do .title h3 {
+  font-size: 1.25rem;
+  font-weight: normal;
+}
+
+.what-to-do .title img {
+  width: 10rem;
+  margin-top: 1rem;
+}
+
+/* VISIT YOUR PLAN */
+/* What to Do Steps */
+.what-to-do .steps {
+  margin: 0 20%;
+}
+
+.what-to-do .steps .step {
+  margin: 4.12rem 0;
+  display: flex;
+}
+
+.what-to-do .steps .step .step-image {
+  padding: 0 1rem;
+}
+
+.what-to-do .steps .step .step-image img {
+  width: 4.5rem;
+}
+
+.what-to-do .steps .step .step-container {
+  padding: 0 1rem;
+}
+
+.what-to-do .steps .step .step-container .step-title p {
+  color: var(--third);
+  width: fit-content;
+  border-bottom: var(--third) 2px solid;
+  border-image: linear-gradient(to right, var(--third) 30%, transparent 30%) 1;
+}
+
+.what-to-do .steps .step .step-container .schedule p {
+  width: 9.43rem;
+}
+
+/* What to Do Step 2 Schedule */
+.what-to-do .steps .step .step-container .schedule .weekday,
+.weekend {
+  display: flex;
+}
+
+.what-to-do .steps .step .step-container .schedule span.end {
+  float: right;
+  padding: 0 2rem;
+}
+
+/* What to Do Step 3 Booking */
+.what-to-do .steps .step .step-container .book {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4.12rem;
+}
+
+.what-to-do .steps .step .step-container .book a {
+  background-color: var(--primary);
+  color: var(--secondary);
+  border-radius: 5px;
+  min-width: 2rem;
+  padding: 0.3rem 0.94rem;
+  font-weight: bold;
+}
+
+/* HR step divider */
+hr {
+  border: 1px solid;
+}
+
+/* FaQ */
+.faq {
+  padding: 0 7%;
+  margin: 4.68rem 0;
+}
+
+.faq .title {
+  text-align: center;
+}
+
+.faq .title h2 {
+  font-size: 2.75rem;
+  font-weight: bold;
+}
+
+/* Faq Container */
+.faq .container {
+  margin: 20px 10% 0;
+  background-color: var(--secondary);
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-content: space-around;
+}
+
+/* Faq Image */
+.faq .container .faq-image {
+  margin: 0 auto;
+  display: flex;
+  align-items: end;
+}
+
+.faq .container .faq-image img {
+  max-width: 55vh;
+}
+
+/* Faq Accordion */
+.faq .container .accordion {
+  border: 2px solid var(--secondary);
+  border-radius: 15px;
+  background-color: var(--primary);
+  margin: 1.25rem;
+}
+
+.faq .container .accordion .accordion-tab .label {
+  padding: 0 0.62rem;
+  color: var(--secondary);
+  display: flex;
+  justify-content: space-between;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.faq .container .accordion .accordion-tab .label p {
+  font-weight: bold;
+  padding: 0.62rem;
+}
+
+.faq .container .accordion .accordion-tab .content {
+  padding: 0 0.62rem;
+  color: var(--secondary);
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+.faq .container .accordion .accordion-tab .content p {
+  font-size: 0.95rem;
+  padding: 0 0.62rem 0.62rem;
+}
+
+.faq .container .accordion hr {
+  color: var(--secondary);
+}
+
+/* END OF VISIT YOUR PLAN */
+
 /* Media Queries */
 /* Small Screen desktop/laptop */
 @media (max-width: 1199.98px) {
+  /* what to do */
+  .what-to-do .steps {
+    margin: 0 16%;
+  }
+
+  /* faq */
+  .faq .container {
+    grid-template-columns: 100%;
+  }
+
+  .faq .container .faq-image {
+    grid-row: 2;
+  }
+
+  .faq .container .accordion {
+    grid-row: 1;
+  }
 }
 
 /* Large Tablet */
@@ -373,16 +580,39 @@ footer .copyright {
   .navbar .navbar-nav .navbar-logout a:hover {
     color: var(--primary);
     background-color: var(--secondary);
+  }
 
-    /* Footer */
-    .footer .footer-logo {
-      grid-column: 1 / span 3;
-      justify-content: center;
-    }
+  /* Footer */
+  .footer .footer-logo {
+    grid-column: 1 / span 3;
+    justify-content: center;
+  }
 
-    .footer .copyright {
-      grid-column: 1 / span 3;
-    }
+  .footer .copyright {
+    grid-column: 1 / span 3;
+  }
+
+  /* hero */
+  .hero h1 {
+    font-size: 3.2rem;
+  }
+
+  .hero img {
+    width: 48vh;
+  }
+
+  /* what to do */
+  .what-to-do {
+    margin: 2.81rem 0 0;
+  }
+
+  .what-to-do .steps {
+    margin: 0 12%;
+  }
+
+  /* faq */
+  .faq {
+    margin: 2.81rem 0;
   }
 }
 
@@ -413,6 +643,53 @@ footer .copyright {
     max-width: 90%;
   }
   /* END OF INDEX STYLE */
+
+  /* hero */
+  .hero {
+    display: block;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero img {
+    margin: 0;
+    width: 36vh;
+  }
+
+  /* what-to-do */
+  .what-to-do .steps {
+    margin: 0 5%;
+  }
+
+  .what-to-do .steps .step {
+    display: block;
+  }
+
+  .what-to-do .steps .step .step-image {
+    text-align: center;
+  }
+
+  .what-to-do .steps .step .step-container {
+    margin: 0;
+  }
+
+  .what-to-do .steps .step .step-container .step-title h3 {
+    text-align: center;
+  }
+
+  .what-to-do .steps .step .step-container .step-title p {
+    border-image: linear-gradient(to right, var(--third) 100%, transparent 100%)
+      1;
+    margin: auto;
+  }
+
+  /* faq */
+  .faq .container {
+    margin: 0;
+  }
 }
 
 /* Mobile */
@@ -439,5 +716,20 @@ footer .copyright {
   .footer .contact-us .phone p,
   .email p {
     font-size: 0.8rem;
+  }
+
+  /* hero */
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero img {
+    margin: 0;
+    width: 24vh;
+  }
+
+  /* faq */
+  .faq .container .faq-image img {
+    max-width: 55vw;
   }
 }

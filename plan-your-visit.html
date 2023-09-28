@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plan Your Visit</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <a href=""><img src="./assets/img/logo.svg" alt="" /></a>
+      </div>
+      <div id="dropdown" data-visible="false" class="navbar-nav">
+        <div class="navbar-middle">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="plan-your-visit.html" class="active">Plan Your Visit</a>
+          <a href="profile page.html">Book Appointment</a>
+        </div>
+        <div class="navbar-login">
+          <a href="login.html" class="login">Login</a>
+        </div>
+      </div>
+      <div class="navbar-right">
+        <a aria-controls="dropdown" aria-expanded="false" class="menu">
+          <img class="menu-img" src="assets/svg/menu.svg" alt="" />
+        </a>
+      </div>
+      <div data-visible="false" class="overlay"></div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Hero -->
+    <section class="hero">
+      <h1>
+        Plan Your <br />
+        Dental Care Visit
+      </h1>
+      <img
+        src="./assets/img/plan-your-visit.svg"
+        alt="Dental Check Illustration"
+      />
+    </section>
+    <!-- Hero End -->
+
+    <!-- What to Do -->
+    <section class="what-to-do">
+      <div class="title">
+        <h2>What to Do</h2>
+        <h3>
+          Here we list a few steps that will guide you in making your
+          orthodontist appointment at
+        </h3>
+        <img src="./assets/img/logo.svg" alt="Our Orthos Logo" class="logo" />
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-image">
+            <img src="./assets/img/doctor.svg" alt="Dentist Illustration" />
+          </div>
+          <div class="step-container">
+            <div class="step-title">
+              <p>Step 1</p>
+              <h3>Choose Dentist</h3>
+            </div>
+            <div class="step-content">
+              <p>
+                Here at Our Orthos, we provide a number of skilled and
+                experienced dental specialists that you can choose from.
+              </p>
+            </div>
+          </div>
+        </div>
+        <hr />
+
+        <div class="step">
+          <div class="step-image">
+            <img src="./assets/img/datentime.svg" alt="Calender Illustration" />
+          </div>
+          <div class="step-container">
+            <div class="step-title">
+              <p>Step 2</p>
+              <h3>Choose Appointment Date & Time</h3>
+            </div>
+            <div class="step-content">
+              <p>
+                Choose your suitable and available date and time for your
+                appointment.
+              </p>
+            </div>
+            <br />
+            <p>Opening Hours</p>
+            <br />
+            <div class="schedule">
+              <div class="weekday">
+                <p>Weekdays <span class="end">:</span></p>
+                <span>09.00 - 19.00</span>
+              </div>
+              <div class="weekend">
+                <p>Weekends <span class="end">:</span></p>
+                <span>Closed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr />
+
+        <div class="step">
+          <div class="step-image">
+            <img src="./assets/img/form.svg" alt="Form Illustration" />
+          </div>
+          <div class="step-container">
+            <div class="step-title">
+              <p>Step 3</p>
+              <h3>Book Appointment</h3>
+            </div>
+            <div class="step-content">
+              <p>Book your appointment through our Book Appointment page.</p>
+            </div>
+            <div class="book">
+              <a href="list-doctor.html">Book Appointment</a>
+            </div>
+          </div>
+        </div>
+        <hr />
+      </div>
+    </section>
+    <!-- What to Do End -->
+
+    <!-- FaQ -->
+    <section class="faq">
+      <div class="title">
+        <h2>FaQ</h2>
+      </div>
+
+      <div class="container">
+        <div class="faq-image">
+          <img
+            src="./assets/img/plan-your-visit-2.svg"
+            alt="Dental Appointment Illustration"
+          />
+        </div>
+        <div class="accordion">
+          <div class="accordion-tab">
+            <div class="label">
+              <p>How can I book my appointment?</p>
+              <img src="./assets/img/down-arrow.svg" alt="" />
+            </div>
+            <div class="content">
+              <p>
+                You can book your appointment through our Book Appointment page
+                by choosing the doctor and available date & time.
+              </p>
+            </div>
+          </div>
+          <hr />
+          <div class="accordion-tab">
+            <div class="label">
+              <p>Where can I see my booked appointment?</p>
+              <img src="./assets/img/down-arrow.svg" alt="" />
+            </div>
+            <div class="content">
+              <p>You can see your booked appointment in your profile page.</p>
+            </div>
+          </div>
+          <hr />
+          <div class="accordion-tab">
+            <div class="label">
+              <p>Can I reschedule/cancel my appointment?</p>
+              <img src="./assets/img/down-arrow.svg" alt="" />
+            </div>
+            <div class="content">
+              <p>
+                You can reschedule or cancel your appointment by contacting us
+                at 021 - 98765 or by email at ourorthos@gmail.com.
+              </p>
+            </div>
+          </div>
+          <hr />
+          <div class="accordion-tab">
+            <div class="label">
+              <p>Can I book and attend an appointment on the same day?</p>
+              <img src="./assets/img/down-arrow.svg" alt="" />
+            </div>
+            <div class="content">
+              <p>
+                You can attend an appointment booked by a maximum of 1 hour
+                before the appointment time on the same day.
+              </p>
+            </div>
+          </div>
+          <hr />
+          <div class="accordion-tab">
+            <div class="label">
+              <p>Where can I see detailed doctor and services info?</p>
+              <img src="./assets/img/down-arrow.svg" alt="" />
+            </div>
+            <div class="content">
+              <p>
+                You can see detailed doctor and services info through our Book
+                Appointment page.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- FaQ End -->
+    <footer class="footer">
+      <div class="footer-logo">
+        <a href="">
+          <img src="./assets/img/logo-white.svg" alt="Our Orthos Logo" />
+        </a>
+      </div>
+      <div class="footer-link">
+        <p class="footer-title">Menu</p>
+        <ul>
+          <li>
+            <a href="">Home</a>
+          </li>
+          <li>
+            <a href="">About Us</a>
+          </li>
+          <li>
+            <a href="">Plan Your Visit</a>
+          </li>
+          <li>
+            <a href="">Book Appointment</a>
+          </li>
+        </ul>
+      </div>
+      <div class="contact-us">
+        <p class="footer-title">Contact Us</p>
+        <div class="phone">
+          <img src="./assets/svg/phone.svg" alt="Phone Icon" />
+          <p>021 - 98765</p>
+        </div>
+        <div class="email">
+          <img src="./assets/img/message.svg" alt="Message Icon" />
+          <p>ourorthos@gmail.com</p>
+        </div>
+      </div>
+      <div class="follow">
+        <p class="footer-title">Follow Us On</p>
+        <div class="sosmed-icon">
+          <a href="whatsapp.com">
+            <img src="./assets/img/whatsapp.svg" alt="Whatsapp Icon" />
+          </a>
+          <a href="instagram.com">
+            <img src="./assets/img/instagram.svg" alt="Instagram Icon" />
+          </a>
+          <a href="facebook.com">
+            <img src="./assets/img/facebook.svg" alt="Facebook Icon" />
+          </a>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>© 2023 Our Orthos</p>
+      </div>
+    </footer>
+
+    <!-- Javascript -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>
