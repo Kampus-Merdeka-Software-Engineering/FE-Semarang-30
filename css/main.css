@@ -33,6 +33,7 @@ body {
   z-index: 1000;
   font-weight: bold;
   top: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Navbar Logo */
@@ -76,6 +77,21 @@ body {
 }
 
 .navbar .navbar-nav .navbar-login a:hover {
+  color: var(--primary);
+  background-color: var(--secondary);
+  border: var(--primary) 1px solid;
+}
+
+.navbar .navbar-nav .navbar-logout a {
+  color: var(--secondary);
+  background-color: var(--primary);
+  border-radius: 15px;
+  min-width: 2rem;
+  padding: 0.3rem 0.94rem;
+  font-weight: bold;
+}
+
+.navbar .navbar-nav .navbar-logout a:hover {
   color: var(--primary);
   background-color: var(--secondary);
   border: var(--primary) 1px solid;
@@ -405,7 +421,6 @@ footer .copyright {
   margin-top: 100px;
 }
 
-
 .container-ourteam {
   margin-top: 20px;
   width: 150px;
@@ -414,7 +429,6 @@ footer .copyright {
   justify-content: space-evenly;
   gap: 40px;
 }
-
 
 .container-div1,
 .container-div2,
@@ -510,17 +524,13 @@ footer .copyright {
 
 /* What to Do Step 2 Schedule */
 .what-to-do .steps .step .step-container .schedule .weekday,
-.saturday,
-.sunday {
+.weekend {
   display: flex;
 }
 
 .what-to-do .steps .step .step-container .schedule .end {
   float: right;
-}
-
-.what-to-do .steps .step .step-container .schedule span {
-  margin-left: 1rem;
+  padding: 0 2rem;
 }
 
 /* What to Do Step 3 Booking */
@@ -666,127 +676,122 @@ th {
   color: black;
 } */
 
-    /* Booking-form Style */
-    .Rectangle-5 {
-      width: 100vw;
-      height: 200px;
-      background-color: var(--primary);
-      color: var(--background);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 2rem;
-    }
+/* Booking-form Style */
+.Rectangle-5 {
+  width: 100vw;
+  height: 200px;
+  background-color: var(--primary);
+  color: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
 
-    .Rectangle-6 {
-      font-size: 1.6rem;
-      text-align: center;
-      color: var(--primary);
-      font-weight: bolder;
-      margin: 20px 0 20px 0;
-    }
+.Rectangle-6 {
+  font-size: 1.6rem;
+  text-align: center;
+  color: var(--primary);
+  font-weight: bolder;
+  margin: 20px 0 20px 0;
+}
 
-    .book-form {
-      width: 60vw;
-      border: 4px solid var(--primary);
-      border-radius: 10px;
-      padding: 10px 0 0 20px;
-      margin: 0 auto 20px auto;
-      font-size: 1.3rem;
-      
-    }
-    .book-form p {
-      color: #6C6C6D;
-      font-size: 0.9rem;
-      font-style: italic;
-    }
+.book-form {
+  width: 60vw;
+  border: 4px solid var(--primary);
+  border-radius: 10px;
+  padding: 10px 0 0 20px;
+  margin: 0 auto 20px auto;
+  font-size: 1.3rem;
+}
+.book-form p {
+  color: #6c6c6d;
+  font-size: 0.9rem;
+  font-style: italic;
+}
 
-    .divlabel-1, .divlabel-2 {
-      font-weight: bolder;
-    } 
+.divlabel-1,
+.divlabel-2 {
+  font-weight: bolder;
+}
 
-    .divlabel-1, .divlabel-2 {
-      margin-bottom: 20px;
-    }
+.divlabel-1,
+.divlabel-2 {
+  margin-bottom: 20px;
+}
 
-    .container-account {
-      border: 1px solid var(--primary);
-      border-radius: 10px;
-      background-color: var(--secondary);
-    }
+.container-account {
+  border: 1px solid var(--primary);
+  border-radius: 10px;
+  background-color: var(--secondary);
+}
 
-    .container-account th {
-      text-align: left;
-      padding-left: 25px;
-      width: 20%;
-      border: none;
-    }
+.container-account th {
+  text-align: left;
+  padding-left: 25px;
+  width: 20%;
+  border: none;
+}
 
-    .container-account table {
-      border-spacing: 0 12px;
-    }
+.container-account table {
+  border-spacing: 0 12px;
+}
 
-    
+.container-account td {
+  border: none;
+  text-align: left;
+}
 
-    .container-account td {
-      border: none;
-      text-align: left;
-    }
+.account,
+.booked-app,
+h1 {
+  margin-bottom: 20px;
+}
 
+/* Profil Page */
+/* changed name of class from tabel to tableprofile <hanif> */
+.tableprofile th {
+  border: none;
+  margin-top: 1rem;
+}
+.noborder {
+  border: none;
+}
+.manualborder {
+  border: none;
+  padding: 5px 0 5px 10px;
+}
 
-    .account, .booked-app, h1 {
-      margin-bottom: 20px;
-    }
+.tableprofile td {
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 0.3rem;
+}
 
-    /* Profil Page */
-    /* changed name of class from tabel to tableprofile <hanif> */
-    .tableprofile th {
-      border: none;
-      margin-top: 1rem; 
+.container-account-booked {
+  display: flex;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  margin-top: 80px;
+  gap: 200px;
+}
 
-    }
-    .noborder {
-      border: none;
-    }
-    .manualborder {
-      border: none;
-      padding: 5px 0 5px 10px;
-    }
+.satusemua {
+  width: 80vw;
+  height: 67vh;
+  margin: 0 auto;
+}
 
-    .tableprofile td {
-      border-radius: 10px;
-      text-align: center;
-      padding-top: 0.3rem;
-      
-      
-    }
-
-
-    .container-account-booked {
-      display: flex;
-      border-radius: 10px;
-      margin-bottom: 50px;
-      margin-top: 80px;
-      gap: 200px;
-    }
-    
-
-    .satusemua {
-      width: 80vw;
-     height: 67vh;
-      margin: 0 auto;
-    }
-
-    .header-username {
-      font-size: 2rem;
-      text-align: center;
-      margin-bottom: 50px;
-    }
+.header-username {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 50px;
+}
 
 /* End of Profil page */
 
 /* edit list doctor */
-.header-list-doctor{
+.header-list-doctor {
   text-align: center;
   margin-top: 20px;
 }
@@ -802,7 +807,7 @@ th {
   background-color: var(--secondary);
 }
 .container-list-jadwal h3 {
-text-align: center;
+  text-align: center;
 }
 
 #jadwal-dokter {
@@ -812,10 +817,123 @@ text-align: center;
   flex-direction: column;
 }
 
-#doctor-list li {cursor: pointer;}
+#doctor-list li {
+  cursor: pointer;
+}
 
+/* Konten ara start */
+.main {
+  display: flexbox;
+  background-color: white;
+  width: 600px;
+  height: 300%;
+  margin: 20px auto;
+  padding: 50px;
+  flex-direction: column;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
 
+.email {
+  text-align: left;
+}
 
+.form label {
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.main img {
+  width: 240px;
+  height: 180px;
+}
+
+button {
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 6px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.error-message {
+  color: red;
+}
+
+/* Register */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  padding: 20px;
+  width: 100%;
+}
+
+.register-container {
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  top: 0;
+  right: 0;
+  width: 550px;
+  padding: 100px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin: 20px auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+button {
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Konten ara End */
 
 /* Media Queries */
 /* Small Screen desktop/laptop */
@@ -836,7 +954,7 @@ text-align: center;
     grid-row: 1;
   }
 
-  .Rectangle-5{
+  .Rectangle-5 {
     width: 100vw;
     height: 170px;
     background-color: var(--primary);
@@ -847,7 +965,7 @@ text-align: center;
     font-size: 2rem;
   }
 
-  .Rectangle-6{
+  .Rectangle-6 {
     color: var(--primary);
     font-weight: bolder;
     font-size: 1.4rem;
@@ -855,11 +973,12 @@ text-align: center;
   }
 
   .book-form p {
-    color: #6C6C6D;
+    color: #6c6c6d;
     font-size: 1rem;
   }
-  
-  .divlabel-1, .divlabel-2 {
+
+  .divlabel-1,
+  .divlabel-2 {
     font-weight: bolder;
     margin-bottom: 20px;
     margin-top: 10px;
@@ -879,11 +998,13 @@ text-align: center;
     gap: 100px;
     font-size: 0.9rem;
   }
-  .container-account table{
+  .container-account table {
     font-size: 0.8rem;
   }
 
-  .account, .booked-app, h1 {
+  .account,
+  .booked-app,
+  h1 {
     margin-bottom: 21px;
     margin-right: 1vw;
   }
@@ -894,14 +1015,13 @@ text-align: center;
     margin-bottom: 50px;
   }
 
-  .container-account{
+  .container-account {
     height: 100px;
   }
-  
+
   .container-list-jadwal {
     width: 90vw;
   }
-
 }
 
 /* Large Tablet */
@@ -972,6 +1092,18 @@ text-align: center;
     background-color: var(--secondary);
   }
 
+  .navbar .navbar-nav .navbar-logout a {
+    text-align: center;
+    border-radius: 15px;
+    display: block;
+    color: var(--secondary);
+  }
+
+  .navbar .navbar-nav .navbar-logout a:hover {
+    color: var(--primary);
+    background-color: var(--secondary);
+  }
+
   .hero h1 {
     font-size: 3.2rem;
   }
@@ -1001,8 +1133,8 @@ text-align: center;
     grid-column: 1 / span 3;
   }
 
-    /* styling hanif */
-  .Rectangle-5{
+  /* styling hanif */
+  .Rectangle-5 {
     width: 100vw;
     height: 150px;
     background-color: var(--primary);
@@ -1013,7 +1145,7 @@ text-align: center;
     font-size: 2rem;
   }
 
-  .Rectangle-6{
+  .Rectangle-6 {
     color: var(--primary);
     font-weight: bolder;
     font-size: 1.4rem;
@@ -1021,11 +1153,12 @@ text-align: center;
   }
 
   .book-form p {
-    color: #6C6C6D;
+    color: #6c6c6d;
     font-size: 1rem;
   }
-  
-  .divlabel-1, .divlabel-2 {
+
+  .divlabel-1,
+  .divlabel-2 {
     font-weight: bolder;
     margin-bottom: 20px;
     margin-top: 10px;
@@ -1045,15 +1178,17 @@ text-align: center;
     gap: 100px;
     font-size: 0.7rem;
   }
-  .container-account table{
+  .container-account table {
     font-size: 0.7rem;
   }
 
-  .account, .booked-app, h1 {
+  .account,
+  .booked-app,
+  h1 {
     margin-bottom: 21px;
     margin-right: 1vw;
   }
-  
+
   .header-username {
     font-size: 1.3rem;
     text-align: center;
@@ -1162,9 +1297,9 @@ text-align: center;
     width: 100vw;
   }
 
-      /* styling hanif */
+  /* styling hanif */
 
-  .Rectangle-5{
+  .Rectangle-5 {
     width: 100vw;
     height: 100px;
     background-color: var(--primary);
@@ -1175,7 +1310,7 @@ text-align: center;
     font-size: 1.3rem;
   }
 
-  .Rectangle-6{
+  .Rectangle-6 {
     color: var(--primary);
     font-weight: bolder;
     font-size: 0.9rem;
@@ -1183,11 +1318,12 @@ text-align: center;
   }
 
   .book-form p {
-    color: #6C6C6D;
+    color: #6c6c6d;
     font-size: 0.6rem;
   }
-  
-  .divlabel-1, .divlabel-2 {
+
+  .divlabel-1,
+  .divlabel-2 {
     font-weight: bolder;
     font-size: 1.2rem;
   }
@@ -1206,19 +1342,21 @@ text-align: center;
     gap: 90px;
     font-size: 0.6rem;
   }
-  .container-account table{
+  .container-account table {
     font-size: 0.6rem;
   }
 
-  .container-account{
+  .container-account {
     height: 80px;
   }
 
-  .account, .booked-app, h1 {
+  .account,
+  .booked-app,
+  h1 {
     margin-bottom: 21px;
     margin-right: 1vw;
   }
-  
+
   .header-username {
     font-size: 1rem;
     text-align: center;
@@ -1229,9 +1367,7 @@ text-align: center;
   }
 
   .container-account th {
-   
     width: 30%;
-   
   }
 
   .container-account {
@@ -1241,9 +1377,6 @@ text-align: center;
   .container-list-jadwal {
     font-size: 1.2rem;
   }
-  
-
-
 }
 
 /* Mobile */
@@ -1291,47 +1424,49 @@ text-align: center;
   .container-values {
     width: 400px;
     height: 550px;
-    margin:20px 0 0 0;
+    margin: 20px 0 0 0;
   }
 
   .book-form {
     font-size: 0.6rem;
   }
 
-  .Rectangle-6{
+  .Rectangle-6 {
     font-size: 0.8rem;
     color: var(--primary);
     font-weight: bolder;
   }
 
-  .Rectangle-5{
-      width: 100vw;
-      height: 60px;
-      background-color: var(--primary);
-      color: var(--background);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 0.9rem;
+  .Rectangle-5 {
+    width: 100vw;
+    height: 60px;
+    background-color: var(--primary);
+    color: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
   }
-  .footer-link{
+  .footer-link {
     font-size: 0.8rem;
   }
 
   .footer .footer-title {
     font-weight: bold;
-    font-size: 1.2rem; 
- }
+    font-size: 1.2rem;
+  }
 
-  .footer .contact-us .phone p, .email p {
+  .footer .contact-us .phone p,
+  .email p {
     font-size: 0.8rem;
   }
 
   .book-form p {
-    color: #6C6C6D;
+    color: #6c6c6d;
   }
-  
-  .divlabel-1, .divlabel-2 {
+
+  .divlabel-1,
+  .divlabel-2 {
     font-weight: bolder;
   }
 
@@ -1348,15 +1483,17 @@ text-align: center;
     gap: 10vw;
     font-size: 0.5rem;
   }
-  .container-account table{
+  .container-account table {
     font-size: 0.6rem;
   }
 
-  .account, .booked-app, h1 {
+  .account,
+  .booked-app,
+  h1 {
     margin-bottom: 21px;
     margin-right: 1vw;
   }
-  
+
   .header-username {
     font-size: 1rem;
     text-align: center;
@@ -1367,9 +1504,7 @@ text-align: center;
   }
 
   .container-account th {
-   
     width: 30%;
-   
   }
 
   .container-account {
