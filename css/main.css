@@ -710,6 +710,15 @@ th {
   font-style: italic;
 }
 
+.buttonForm {
+  text-align: center;
+}
+
+.buttonForm button{
+  background-color: var(--primary);
+}
+
+
 .divlabel-1,
 .divlabel-2 {
   font-weight: bolder;
@@ -731,6 +740,7 @@ th {
   padding-left: 25px;
   width: 20%;
   border: none;
+  padding-right: 20px;
 }
 
 .container-account table {
