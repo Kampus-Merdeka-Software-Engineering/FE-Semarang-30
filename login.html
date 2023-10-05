@@ -1,123 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Login</title>
+  </head>
 
-  <link rel="stylesheet" href="css/main.css" />
-  <title>Login</title>
-</head>
-
-<body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="navbar-logo">
-      <a href=""><img src="assets/svg/logo.svg" alt="" /></a>
-    </div>
-    <div id="dropdown" data-visible="false" class="navbar-nav">
-      <div class="navbar-middle">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="plan-your-visit.html">Plan Your Visit</a>
-        <a href="profile-page.html">Book Appointment</a>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <a href=""><img src="assets/svg/logo.svg" alt="" /></a>
       </div>
-      <div class="navbar-login">
-        <a href="login.html" class="login">Login</a>
+      <div id="dropdown" data-visible="false" class="navbar-nav">
+        <div class="navbar-middle">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="plan-your-visit.html">Plan Your Visit</a>
+          <a href="profile-page.html">Book Appointment</a>
+        </div>
+        <div class="navbar-login">
+          <a href="login.html" class="login">Login</a>
+        </div>
       </div>
-    </div>
-    <div class="navbar-right">
-      <a aria-controls="dropdown" aria-expanded="false" class="menu">
-        <img class="menu-img" src="assets/svg/menu.svg" alt="" />
-      </a>
-    </div>
-    <div data-visible="false" class="overlay"></div>
-  </nav>
-  <!-- Navbar End -->
-
-  <!-- Konten Start -->
-  <div class="main">
-    <div class="konten">
-      <h2>Login to My Account</h2>
-      <img src="assets/img/login.png" />
-    </div>
-
-    <form id="loginForm">
-      <div class="">
-        <label for="email" >Email</label>
-        <input type="email" id="form-email" name="email" placeholder="Enter Email" required autofocus />
-      </div>
-      <div class="">
-        <label for="password" >password</label>
-        <input type="password" id="password" name="password" placeholder="" required autofocus />
-      </div>
-      <div>
-        <button type="submit">Login</button>
-      </div>
-      <div>
-        <button id="submit-btn">
-          <a href="register.html">Create Account</a>
-        </button>
-      </div>
-    </form>
-    <p id="login-message" class="error-message"></p>
-  </div>
-  <!-- Konten End -->
-
-  <!-- start of footer -->
-  <footer class="footer">
-    <div class="footer-logo">
-      <a href="">
-        <img src="assets/svg/logo-white.svg" alt="Our Orthos Logo" />
-      </a>
-    </div>
-    <div class="footer-link">
-      <p class="footer-title">Menu</p>
-      <ul>
-        <li>
-          <a href="">Home</a>
-        </li>
-        <li>
-          <a href="">About Us</a>
-        </li>
-        <li>
-          <a href="">Plan Your Visit</a>
-        </li>
-        <li>
-          <a href="">Book Appointment</a>
-        </li>
-      </ul>
-    </div>
-    <div class="contact-us">
-      <p class="footer-title">Contact Us</p>
-      <div class="phone">
-        <img src="assets/svg/phone.svg" alt="Phone Icon" />
-        <p>021 - 98765</p>
-      </div>
-      <div class="email">
-        <img src="assets/svg/message.svg" alt="Message Icon" />
-        <p>ourorthos@gmail.com</p>
-      </div>
-    </div>
-    <div class="follow">
-      <p class="footer-title">Follow Us On</p>
-      <div class="sosmed-icon">
-        <a href="whatsapp.com">
-          <img src="assets/svg/whatsapp.svg" alt="Whatsapp Icon" />
-        </a>
-        <a href="instagram.com">
-          <img src="assets/svg/instagram.svg" alt="Instagram Icon" />
-        </a>
-        <a href="facebook.com">
-          <img src="assets/svg/facebook.svg" alt="Facebook Icon" />
+      <div class="navbar-right">
+        <a aria-controls="dropdown" aria-expanded="false" class="menu">
+          <img class="menu-img" src="assets/svg/menu.svg" alt="" />
         </a>
       </div>
-    </div>
-    <div class="copyright">
-      <p>© 2023 Our Orthos</p>
-    </div>
-  </footer>
-  <script src="./js/main.js"></script>
-</body>
+      <div data-visible="false" class="overlay"></div>
+    </nav>
+    <!-- Navbar End -->
 
+    <!-- Konten Start -->
+    <div class="login-main">
+      <div class="konten">
+        <img src="./assets/img/login.png" />
+      </div>
+      <div class="konten">
+        <h1>Login to My Account</h1>
+        <form action="#" method="post" class="loginForm" autocomplete="off">
+          <div class="form-group">
+            <label for="email" id="form-email">Email</label>
+            <input
+              type="email"
+              id="form-email"
+              name="email"
+              placeholder="Enter Email"
+              required
+              autofocus
+            />
+            <label for="password" id="form-password">Password</label>
+            <input
+              type="password"
+              id="form-password"
+              name="password"
+              placeholder="Enter Password"
+              required
+              autofocus
+            />
+          </div>
+          <div class="btn-container">
+            <button type="submit">Login</button>
+            <button type="submit" id="submit-btn" name="submit">
+              <a href="register.html">Create Account</a>
+            </button>
+          </div>
+        </form>
+        <p id="login-message" class="error-message"></p>
+      </div>
+    </div>
+    <!-- Konten End -->
+
+    <!-- start of footer -->
+    <footer class="footer">
+      <div class="footer-logo">
+        <a href="">
+          <img src="assets/svg/logo-white.svg" alt="Our Orthos Logo" />
+        </a>
+      </div>
+      <div class="footer-link">
+        <p class="footer-title">Menu</p>
+        <ul>
+          <li>
+            <a href="">Home</a>
+          </li>
+          <li>
+            <a href="">About Us</a>
+          </li>
+          <li>
+            <a href="">Plan Your Visit</a>
+          </li>
+          <li>
+            <a href="">Book Appointment</a>
+          </li>
+        </ul>
+      </div>
+      <div class="contact-us">
+        <p class="footer-title">Contact Us</p>
+        <div class="phone">
+          <img src="assets/svg/phone.svg" alt="Phone Icon" />
+          <p>021 - 98765</p>
+        </div>
+        <div class="email">
+          <img src="assets/svg/message.svg" alt="Message Icon" />
+          <p>ourorthos@gmail.com</p>
+        </div>
+      </div>
+      <div class="follow">
+        <p class="footer-title">Follow Us On</p>
+        <div class="sosmed-icon">
+          <a href="whatsapp.com">
+            <img src="assets/svg/whatsapp.svg" alt="Whatsapp Icon" />
+          </a>
+          <a href="instagram.com">
+            <img src="assets/svg/instagram.svg" alt="Instagram Icon" />
+          </a>
+          <a href="facebook.com">
+            <img src="assets/svg/facebook.svg" alt="Facebook Icon" />
+          </a>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>© 2023 Our Orthos</p>
+      </div>
+    </footer>
+    <script src="./js/main.js"></script>
+  </body>
 </html>

@@ -710,12 +710,11 @@ th {
   font-style: italic;
 }
 
-
 .buttonForm {
   text-align: center;
 }
 
-.buttonForm button{
+.buttonForm button {
   background-color: var(--primary);
 }
 .divlabel-1,
@@ -740,7 +739,6 @@ th {
   width: 20%;
   border: none;
   padding-right: 20px;
-
 }
 
 .container-account table {
@@ -832,118 +830,89 @@ h1 {
 }
 
 /* Konten ara start */
-.main {
-  display: flexbox;
-  background-color: white;
-  width: 600px;
-  height: 300%;
-  margin: 20px auto;
-  padding: 50px;
-  flex-direction: column;
-  border-radius: 5px;
+.register-main,
+.login-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px;
+  padding: 20px 50px;
+  border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  text-align: center;
+  background-color: var(--secondary);
 }
 
-.email {
-  text-align: left;
+.btn-container {
+  display: flex;
+  flex-direction: row;
 }
 
-.form label {
-  margin-bottom: 20px;
-  text-align: right;
+.register-main .konten,
+.login-main .konten {
+  flex: 1;
+  padding: 20px;
 }
 
+.register-main .konten img,
+.login-main .konten img {
+  width: 90%;
+}
+.register-main .konten input,
+.login-main .konten input {
+  margin-bottom: 10px;
+}
 input[type="text"],
 input[type="email"],
 input[type="password"] {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 3px;
+  border-radius: 50px;
 }
 
-.main img {
-  width: 240px;
-  height: 180px;
-}
-
-button {
-  background-color: #ff0000;
+.register-main .konten button,
+.login-main .konten button {
+  font-size: large;
+  background-color: var(--primary);
   color: #fff;
   border: none;
-  padding: 6px 20px;
-  border-radius: 6px;
+  padding: 6px 25px;
+  border-radius: 50px;
   cursor: pointer;
   margin: 10px;
 }
 
-button:hover {
-  background-color: #0056b3;
+.register-main .konten button:hover,
+.login-main .konten button:hover {
+  background-color: #34929c;
 }
 
-#submit-btn a{
-  color: var(--secondary);
+.register-main .konten p,
+.login-main .konten p {
+  text-decoration: none;
+  color: black;
 }
-.error-message {
-  color: red;
+.register-main .konten a,
+.login-main .konten a {
+  text-decoration: none;
+  color: black;
 }
-
-/* Register */
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  padding: 20px;
-  width: 100%;
+.register-main .konten a:hover,
+.login-main .konten a:hover {
+  text-decoration: underline;
+  color: black;
+  font-weight: bold;
 }
-
-.register-container {
-  background-color: #ffffff;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  top: 0;
-  right: 0;
-  width: 550px;
-  padding: 100px;
+.register-main .konten button a,
+.login-main .konten button a {
+  text-decoration: none;
+  color: white;
 }
-
-h2 {
-  margin-bottom: 20px;
-}
-
-.form-group {
-  margin: 20px auto;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-  text-align: left;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
-
-button {
-  background-color: #ff0000;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
+.register-main .konten button a:hover,
+.login-main .konten button a:hover {
+  text-decoration: none;
+  color: white;
 }
 
 /* Konten ara End */
@@ -1183,7 +1152,6 @@ button:hover {
     margin: 0 auto;
   }
 
-
   .container-account-booked {
     display: flex;
     border-radius: 10px;
@@ -1390,6 +1358,22 @@ button:hover {
   .container-list-jadwal {
     font-size: 1.2rem;
   }
+
+  .form-login-container .main img {
+    width: 75%;
+  }
+
+  .register-main,
+  .login-main {
+    flex-direction: column;
+    text-align: center;
+    margin: 20px;
+    padding: 0px;
+  }
+
+  .btn-container {
+    flex-direction: column;
+  }
 }
 
 /* Mobile */
@@ -1527,7 +1511,6 @@ button:hover {
   .ourteam {
     transform: scale(0.7);
   }
-
 
   .main {
     transform: scale(0.7);
