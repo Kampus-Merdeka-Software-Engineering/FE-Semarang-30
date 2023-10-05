@@ -710,6 +710,7 @@ th {
   font-style: italic;
 }
 
+
 .buttonForm {
   text-align: center;
 }
@@ -717,8 +718,6 @@ th {
 .buttonForm button{
   background-color: var(--primary);
 }
-
-
 .divlabel-1,
 .divlabel-2 {
   font-weight: bolder;
@@ -741,6 +740,7 @@ th {
   width: 20%;
   border: none;
   padding-right: 20px;
+
 }
 
 .container-account table {
@@ -885,7 +885,6 @@ button:hover {
 #submit-btn a{
   color: var(--secondary);
 }
-
 .error-message {
   color: red;
 }
@@ -1184,6 +1183,7 @@ button:hover {
     margin: 0 auto;
   }
 
+
   .container-account-booked {
     display: flex;
     border-radius: 10px;
@@ -1207,7 +1207,6 @@ button:hover {
     font-size: 1.3rem;
     text-align: center;
   }
-
   .container-visi-misi {
     font-size: 0.9rem;
     transform: scale(0.9);
@@ -1528,6 +1527,7 @@ button:hover {
   .ourteam {
     transform: scale(0.7);
   }
+
 
   .main {
     transform: scale(0.7);

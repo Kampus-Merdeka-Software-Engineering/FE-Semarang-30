@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking Form</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap" rel="stylesheet" />
+
+    <!-- Google Icon -->
+    <!-- <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        /> -->
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/main.css" />
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <a href=""><img src="./assets/img/logo.svg" alt="" /></a>
+        </div>
+        <div id="dropdown" class="navbar-nav">
+            <div class="navbar-middle">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="plan-your-visit.html">Plan Your Visit</a>
+                <a href="profile page.html">Book Appointment</a>
+            </div>
+            <div class="navbar-login">
+                <a href="login.html" class="login">Login</a>
+            </div>
+        </div>
+        <div class="navbar-right">
+            <a id="menu" class="menu">
+                <img src="./assets/img/menu.svg" alt="" />
+            </a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Header/Hero -->
+    <div class="Rectangle-5">
+        <h1>BOOKING FORM</h1>
+    </div>
+    <div class="Rectangle-6">
+        <p>Please choose your desired dentist, date, and time for your appointment</p>
+    </div>
+    <!-- End of Hero -->
+
+    <!-- Book Form -->
+
+    <div class="book-form">
+        <form action="">
+            <div class="divlabel-1">
+                <label for="choosedentis">Dentist</label><br>
+                <select name="choosedentis" id="choosedentis">
+                    <option value="0">choose dentis</option>
+                    <option value="dokter1">dokter 1</option>
+                    <option value="dokter2">dokter 2</option>
+                    <option value="dokter3">dokter 3</option>
+                </select>
+            </div>
+            <div class="divlabel-2">
+                <label for="date">Date & Time</label><br>
+                <select name="date" id="date">
+                    <option value="0">select the day</option>
+                    <option value="selasa">Senin</option>
+                    <option value="selasa">Selasa</option>
+                    <option value="rabu">Rabu</option>
+                </select>
+                <select name="time" id="time">
+                    <option value="0">Choose time</option>
+                    <option value="10.00">10.00</option>
+                    <option value="11.00">11.00</option>
+                    <option value="12.00">12.00</option>
+                </select>
+            </div>
+            <p>Appointment details can be seen through your profile page after booking appointment.</p>
+            <br>
+            <div class="book-2">
+                <a href="list-doctor.html">Book Appointment</a>
+              </div>
+        </form>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-logo">
+            <a href="">
+                <img src="./assets/img/logo-white.svg" alt="Our Orthos Logo" />
+            </a>
+        </div>
+        <div class="footer-link">
+            <p class="footer-title">Menu</p>
+            <ul>
+                <li>
+                    <a href="">Home</a>
+                </li>
+                <li>
+                    <a href="">About Us</a>
+                </li>
+                <li>
+                    <a href="">Plan Your Visit</a>
+                </li>
+                <li>
+                    <a href="">Book Appointment</a>
+                </li>
+            </ul>
+        </div>
+        <div class="contact-us">
+            <p class="footer-title">Contact Us</p>
+            <div class="phone">
+                <img src="./assets/svg/phone.svg" alt="Phone Icon" />
+                <p>021 - 98765</p>
+            </div>
+            <div class="email">
+                <img src="./assets/img/message.svg" alt="Message Icon" />
+                <p>ourorthos@gmail.com</p>
+            </div>
+        </div>
+        <div class="follow">
+            <p class="footer-title">Follow Us On</p>
+            <div class="sosmed-icon">
+                <a href="whatsapp.com">
+                    <img src="./assets/img/whatsapp.svg" alt="Whatsapp Icon" />
+                </a>
+                <a href="instagram.com">
+                    <img src="./assets/img/instagram.svg" alt="Instagram Icon" />
+                </a>
+                <a href="facebook.com">
+                    <img src="./assets/img/facebook.svg" alt="Facebook Icon" />
+                </a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2023 Our Orthos</p>
+        </div>
+    </footer>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
