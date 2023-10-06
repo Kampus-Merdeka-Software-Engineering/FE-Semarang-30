@@ -888,22 +888,10 @@ input[type="password"] {
   background-color: #34929c;
 }
 
-.register-main .konten p,
-.login-main .konten p {
-  text-decoration: none;
+.register-main .konten p a {
   color: black;
 }
-.register-main .konten a,
-.login-main .konten a {
-  text-decoration: none;
-  color: black;
-}
-.register-main .konten a:hover,
-.login-main .konten a:hover {
-  text-decoration: underline;
-  color: black;
-  font-weight: bold;
-}
+
 .register-main .konten button a,
 .login-main .konten button a {
   text-decoration: none;
