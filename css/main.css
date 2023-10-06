@@ -671,14 +671,9 @@ th {
 
 /* END OF LIST DOCTOR */
 
-/* THIS CSS IS NOT USE */
-/* .awardall {
-  color: black;
-} */
-
 /* Booking-form Style */
 .Rectangle-5 {
-  width: 100vw;
+  width: 100%;
   height: 200px;
   background-color: var(--primary);
   color: var(--background);
@@ -700,7 +695,7 @@ th {
   width: 60vw;
   border: 4px solid var(--primary);
   border-radius: 10px;
-  padding: 10px 0 0 20px;
+  padding: 10px 0 10px 20px;
   margin: 0 auto 20px auto;
   font-size: 1.3rem;
 }
@@ -710,12 +705,20 @@ th {
   font-style: italic;
 }
 
+#formBooking select {
+  padding: 5px;
+}
+
 .buttonForm {
   text-align: center;
 }
 
 .buttonForm button {
   background-color: var(--primary);
+  padding: 7px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
 }
 .divlabel-1,
 .divlabel-2 {
@@ -870,8 +873,8 @@ input[type="password"] {
   border: 1px solid #ccc;
   border-radius: 50px;
 }
-input[type="text"] { 
-  text-transform: capitalize; 
+input[type="text"] {
+  text-transform: capitalize;
 }
 .register-main .konten button,
 .login-main .konten button {
@@ -927,7 +930,7 @@ input[type="text"] {
   }
 
   .Rectangle-5 {
-    width: 100vw;
+    width: 100%;
     height: 170px;
     background-color: var(--primary);
     color: var(--background);
@@ -945,7 +948,6 @@ input[type="text"] {
   }
 
   .book-form p {
-    color: #6c6c6d;
     font-size: 1rem;
   }
 
@@ -1107,7 +1109,7 @@ input[type="text"] {
 
   /* styling hanif */
   .Rectangle-5 {
-    width: 100vw;
+    width: 100%;
     height: 150px;
     background-color: var(--primary);
     color: var(--background);
@@ -1125,7 +1127,10 @@ input[type="text"] {
   }
 
   .book-form p {
-    color: #6c6c6d;
+    font-size: 1rem;
+  }
+
+  #formBooking select option {
     font-size: 1rem;
   }
 
@@ -1271,7 +1276,7 @@ input[type="text"] {
   /* styling hanif */
 
   .Rectangle-5 {
-    width: 100vw;
+    width: 100%;
     height: 100px;
     background-color: var(--primary);
     color: var(--background);
@@ -1289,7 +1294,6 @@ input[type="text"] {
   }
 
   .book-form p {
-    color: #6c6c6d;
     font-size: 0.6rem;
   }
 
@@ -1425,7 +1429,7 @@ input[type="text"] {
   }
 
   .Rectangle-5 {
-    width: 100vw;
+    width: 100%;
     height: 60px;
     background-color: var(--primary);
     color: var(--background);
@@ -1446,10 +1450,6 @@ input[type="text"] {
   .footer .contact-us .phone p,
   .email p {
     font-size: 0.8rem;
-  }
-
-  .book-form p {
-    color: #6c6c6d;
   }
 
   .divlabel-1,

@@ -73,27 +73,27 @@ labels.forEach(function (label) {
 const doctorData = [
   {
     name: "drg. Wisis Arif Setiawan K D, Sp.KGA (Pedodonti/Gigi Anak)",
-    schedule: ["Senin - Rabu : 09.00 - 14.00", "Kamis - Sabtu : 15.00 - 19.00"],
+    schedule: ["Senin - Rabu : 09.00 - 14.00", "Kamis - Jumat : 15.00 - 19.00"],
   },
   {
     name: "drg. Zahra Maysani",
-    schedule: ["Senin - Rabu : 09.00 - 14.00", "Kamis - Sabtu : 15.00 - 19.00"],
+    schedule: ["Senin - Rabu : 09.00 - 14.00", "Kamis - Jumat : 15.00 - 19.00"],
   },
   {
     name: "drg. Erna Listiana Dewi, MPH",
-    schedule: ["Senin - Rabu : 09.00 - 14.00", "Kamis - Sabtu : 15.00 - 19.00"],
+    schedule: ["Senin - Rabu : 09.00 - 14.00", "Kamis - Jumat : 15.00 - 19.00"],
   },
   {
     name: "drg. Rafaell Victor Christian, Sp.KG",
-    schedule: ["Senin - Rabu : 15.00 - 19.00", "Kamis - Sabtu : 09.00 - 14.00"],
+    schedule: ["Senin - Rabu : 15.00 - 19.00", "Kamis - Jumat : 09.00 - 14.00"],
   },
   {
     name: "drg. Andhika Hanif Prasetyo K Sp.KGA",
-    schedule: ["Senin - Rabu : 15.00 - 19.00", "Kamis - Sabtu : 09.00 - 14.00"],
+    schedule: ["Senin - Rabu : 15.00 - 19.00", "Kamis - Jumat : 09.00 - 14.00"],
   },
   {
     name: "drg. Anggita Prameswari K Sp.KGA",
-    schedule: ["Senin - Rabu : 15.00 - 19.00", "Kamis - Sabtu : 09.00 - 14.00"],
+    schedule: ["Senin - Rabu : 15.00 - 19.00", "Kamis - Jumat : 09.00 - 14.00"],
   },
 
   // Tambahkan data dokter dan jadwal lainnya di sini
@@ -241,12 +241,6 @@ if (currentPage === "/profile-page.html") {
         getDate.textContent = `${appointments.schedule_date_date}`;
         getTime.textContent = `${appointments.schedule_time_start} - ${appointments.schedule_time_end}`;
       } else {
-        getAppointment.innerHTML = "";
-
-        const h2 = document.createElement("h2");
-        h2.textContent = "You have no appointments scheduled";
-
-        getAppointment.appendChild(h2);
       }
     })
     .catch((error) => {
@@ -396,32 +390,38 @@ if (currentPage === "/booking-form.html") {
       const [scheduleDateId, scheduleDateDate] = selectDate.value.split("|");
       const selectedTimeId = selectTime.value;
 
-      console.log(selectedDentistId, scheduleDateId, selectedTimeId);
-
-      fetch("http://localhost:3000/appointments", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        // Mengikuti struktur model/database (menggunakan _ bukan camelCase)
-        body: JSON.stringify({
-          user_id: user_id,
-          dentist_id: selectedDentistId,
-          schedule_date_id: scheduleDateId,
-          schedule_time_id: selectedTimeId,
-        }),
-      })
-        .then((response) => {
-          if (response.ok) {
-            alert("Appointment booked!");
-            window.location.href = "/index.html";
-          } else {
-            alert("Book appointment failed!");
-          }
+      if (
+        selectedDentistId === "" ||
+        scheduleDateId === "" ||
+        selectedTimeId === ""
+      ) {
+        alert("Please choose dentist, date, and time!");
+      } else {
+        fetch("http://localhost:3000/appointments", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          // Mengikuti struktur model/database (menggunakan _ bukan camelCase)
+          body: JSON.stringify({
+            user_id: user_id,
+            dentist_id: selectedDentistId,
+            schedule_date_id: scheduleDateId,
+            schedule_time_id: selectedTimeId,
+          }),
         })
-        .catch((error) => {
-          alert(`Terdapat error: ${error.message}`);
-        });
+          .then((response) => {
+            if (response.ok) {
+              alert("Appointment booked!");
+              window.location.href = "/index.html";
+            } else {
+              alert("Book appointment failed!");
+            }
+          })
+          .catch((error) => {
+            alert(`Terdapat error: ${error.message}`);
+          });
+      }
     });
   } else {
     window.location.href = "/login.html";
