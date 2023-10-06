@@ -27,6 +27,16 @@ overlay.addEventListener("click", () => {
   updateVisibility();
 });
 
+// Navbar check if user logged in
+const user_id = sessionStorage.getItem("user_id");
+
+const navbarProfile = document.querySelector(".navbar-login");
+if (user_id) {
+  navbarProfile.innerHTML = `<a href="profile-page.html" class="login">${user_id}</a>`;
+} else {
+  navbarProfile.innerHTML = `<a href="login.html" class="login">Login</a>`;
+}
+
 // For specific pages
 const currentPage = window.location.pathname;
 
