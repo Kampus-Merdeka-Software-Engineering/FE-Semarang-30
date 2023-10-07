@@ -82,21 +82,6 @@ body {
   border: var(--primary) 1px solid;
 }
 
-.navbar .navbar-nav .navbar-logout a {
-  color: var(--secondary);
-  background-color: var(--primary);
-  border-radius: 15px;
-  min-width: 2rem;
-  padding: 0.3rem 0.94rem;
-  font-weight: bold;
-}
-
-.navbar .navbar-nav .navbar-logout a:hover {
-  color: var(--primary);
-  background-color: var(--secondary);
-  border: var(--primary) 1px solid;
-}
-
 /* Navbar Menu Button */
 .navbar .navbar-right {
   display: none;
@@ -226,6 +211,7 @@ footer .copyright {
   border-radius: 50px;
   font-weight: bold;
 }
+
 .erna-hero-section .column a:hover {
   background-color: gray;
   color: var(--background);
@@ -300,6 +286,7 @@ footer .copyright {
 .erna-carousel-container .carousel .service h3 {
   margin-top: 10px;
 }
+
 /* END OF INDEX STYLE */
 
 /* START OF ABOUT US STYLE  */
@@ -373,6 +360,7 @@ footer .copyright {
   height: 53px;
   flex-shrink: 0;
 }
+
 /* End Almamater Logo */
 
 /* container visi misi */
@@ -395,7 +383,8 @@ footer .copyright {
   height: 260px;
   padding: 64.19000244140625px 50px 81.19998168945312px 50px;
   border-radius: 10px;
-  background: #294b67;
+  background: var(--primary);
+  color: var(--background);
   margin-top: 30px;
 }
 
@@ -404,7 +393,8 @@ footer .copyright {
   height: 230px;
   padding: 64.19000244140625px 50px 81.19998168945312px 50px;
   border-radius: 10px;
-  background: #294b67;
+  background: var(--primary);
+  color: var(--background);
   margin-top: 30px;
 }
 
@@ -412,7 +402,8 @@ footer .copyright {
   width: 570px;
   height: 525px;
   padding: 56px 50px 55px 50px;
-  background: #294b67;
+  background: var(--primary);
+  color: var(--background);
   border-radius: 10px;
   margin-left: 30px;
 }
@@ -486,6 +477,17 @@ footer .copyright {
 .containerdiv1-6 {
   margin-bottom: 115px;
 }
+
+.title-award {
+margin-bottom: 60px;
+}
+
+.title-award h2{
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+
 /* END OF ABOUT US HTML */
 
 /* VISIT YOUR PLAN */
@@ -660,7 +662,8 @@ th {
   text-align: center;
 }
 
-.book-2 a {
+.book-2 a,
+button {
   background-color: var(--primary);
   color: var(--secondary);
   border-radius: 5px;
@@ -671,14 +674,9 @@ th {
 
 /* END OF LIST DOCTOR */
 
-/* THIS CSS IS NOT USE */
-/* .awardall {
-  color: black;
-} */
-
 /* Booking-form Style */
 .Rectangle-5 {
-  width: 100vw;
+  width: 100%;
   height: 200px;
   background-color: var(--primary);
   color: var(--background);
@@ -700,24 +698,33 @@ th {
   width: 60vw;
   border: 4px solid var(--primary);
   border-radius: 10px;
-  padding: 10px 0 0 20px;
+  padding: 10px 0 10px 20px;
   margin: 0 auto 20px auto;
   font-size: 1.3rem;
 }
+
 .book-form p {
   color: #6c6c6d;
   font-size: 0.9rem;
   font-style: italic;
 }
 
+#formBooking select {
+  padding: 5px;
+}
 
 .buttonForm {
   text-align: center;
 }
 
-.buttonForm button{
+.buttonForm button {
   background-color: var(--primary);
+  padding: 7px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
 }
+
 .divlabel-1,
 .divlabel-2 {
   font-weight: bolder;
@@ -740,7 +747,6 @@ th {
   width: 20%;
   border: none;
   padding-right: 20px;
-
 }
 
 .container-account table {
@@ -764,9 +770,11 @@ h1 {
   border: none;
   margin-top: 1rem;
 }
+
 .noborder {
   border: none;
 }
+
 .manualborder {
   border: none;
   padding: 5px 0 5px 10px;
@@ -816,6 +824,7 @@ h1 {
   margin: 20px auto 50px auto;
   background-color: var(--secondary);
 }
+
 .container-list-jadwal h3 {
   text-align: center;
 }
@@ -832,26 +841,38 @@ h1 {
 }
 
 /* Konten ara start */
-.main {
-  display: flexbox;
-  background-color: white;
-  width: 600px;
-  height: 300%;
-  margin: 20px auto;
-  padding: 50px;
-  flex-direction: column;
-  border-radius: 5px;
+.register-main,
+.login-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px;
+  padding: 20px 50px;
+  border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  text-align: center;
+  background-color: var(--secondary);
 }
 
-.email {
-  text-align: left;
+.btn-container {
+  display: flex;
+  flex-direction: row;
 }
 
-.form label {
-  margin-bottom: 20px;
-  text-align: right;
+.register-main .konten,
+.login-main .konten {
+  flex: 1;
+  padding: 20px;
+}
+
+.register-main .konten img,
+.login-main .konten img {
+  width: 90%;
+}
+
+.register-main .konten input,
+.login-main .konten input {
+  margin-bottom: 10px;
 }
 
 input[type="text"],
@@ -860,90 +881,40 @@ input[type="password"] {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 3px;
+  border-radius: 50px;
 }
 
-.main img {
-  width: 240px;
-  height: 180px;
-}
-
-button {
-  background-color: #ff0000;
+.register-main .konten button,
+.login-main .konten button {
+  font-size: large;
+  background-color: var(--primary);
   color: #fff;
   border: none;
-  padding: 6px 20px;
-  border-radius: 6px;
+  padding: 6px 25px;
+  border-radius: 50px;
   cursor: pointer;
   margin: 10px;
 }
 
-button:hover {
-  background-color: #0056b3;
+.register-main .konten button:hover,
+.login-main .konten button:hover {
+  background-color: #34929c;
 }
 
-#submit-btn a{
-  color: var(--secondary);
-}
-.error-message {
-  color: red;
+.register-main .konten p a {
+  color: black;
 }
 
-/* Register */
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  padding: 20px;
-  width: 100%;
+.register-main .konten button a,
+.login-main .konten button a {
+  text-decoration: none;
+  color: white;
 }
 
-.register-container {
-  background-color: #ffffff;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  top: 0;
-  right: 0;
-  width: 550px;
-  padding: 100px;
-}
-
-h2 {
-  margin-bottom: 20px;
-}
-
-.form-group {
-  margin: 20px auto;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-  text-align: left;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
-
-button {
-  background-color: #ff0000;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
+.register-main .konten button a:hover,
+.login-main .konten button a:hover {
+  text-decoration: none;
+  color: white;
 }
 
 /* Konten ara End */
@@ -968,7 +939,7 @@ button:hover {
   }
 
   .Rectangle-5 {
-    width: 100vw;
+    width: 100%;
     height: 170px;
     background-color: var(--primary);
     color: var(--background);
@@ -986,7 +957,6 @@ button:hover {
   }
 
   .book-form p {
-    color: #6c6c6d;
     font-size: 1rem;
   }
 
@@ -1011,6 +981,7 @@ button:hover {
     gap: 100px;
     font-size: 0.9rem;
   }
+
   .container-account table {
     font-size: 0.8rem;
   }
@@ -1105,18 +1076,6 @@ button:hover {
     background-color: var(--secondary);
   }
 
-  .navbar .navbar-nav .navbar-logout a {
-    text-align: center;
-    border-radius: 15px;
-    display: block;
-    color: var(--secondary);
-  }
-
-  .navbar .navbar-nav .navbar-logout a:hover {
-    color: var(--primary);
-    background-color: var(--secondary);
-  }
-
   .hero h1 {
     font-size: 3.2rem;
   }
@@ -1148,7 +1107,7 @@ button:hover {
 
   /* styling hanif */
   .Rectangle-5 {
-    width: 100vw;
+    width: 100%;
     height: 150px;
     background-color: var(--primary);
     color: var(--background);
@@ -1166,7 +1125,10 @@ button:hover {
   }
 
   .book-form p {
-    color: #6c6c6d;
+    font-size: 1rem;
+  }
+
+  #formBooking select option {
     font-size: 1rem;
   }
 
@@ -1183,7 +1145,6 @@ button:hover {
     margin: 0 auto;
   }
 
-
   .container-account-booked {
     display: flex;
     border-radius: 10px;
@@ -1192,6 +1153,7 @@ button:hover {
     gap: 100px;
     font-size: 0.7rem;
   }
+
   .container-account table {
     font-size: 0.7rem;
   }
@@ -1207,6 +1169,7 @@ button:hover {
     font-size: 1.3rem;
     text-align: center;
   }
+
   .container-visi-misi {
     font-size: 0.9rem;
     transform: scale(0.9);
@@ -1216,6 +1179,7 @@ button:hover {
   .container-list-jadwal {
     height: 250px;
   }
+
   #jadwal-dokter {
     text-align: center;
     font-size: 1.2rem;
@@ -1226,6 +1190,7 @@ button:hover {
 
 /* Tablet */
 @media (max-width: 767.98px) {
+
   /* ERNA STYLE */
   /* START OF INDEX STYLE */
   .erna-hero-section {
@@ -1250,6 +1215,7 @@ button:hover {
     padding: 0;
     max-width: 90%;
   }
+
   /* END OF INDEX STYLE */
 
   .hero {
@@ -1287,8 +1253,7 @@ button:hover {
   }
 
   .what-to-do .steps .step .step-container .step-title p {
-    border-image: linear-gradient(to right, var(--third) 100%, transparent 100%)
-      1;
+    border-image: linear-gradient(to right, var(--third) 100%, transparent 100%) 1;
     margin: auto;
   }
 
@@ -1305,6 +1270,7 @@ button:hover {
     align-items: center;
     font-size: 0.7rem;
   }
+
   .container-1,
   .container-2 {
     width: 100vw;
@@ -1313,7 +1279,7 @@ button:hover {
   /* styling hanif */
 
   .Rectangle-5 {
-    width: 100vw;
+    width: 100%;
     height: 100px;
     background-color: var(--primary);
     color: var(--background);
@@ -1331,7 +1297,6 @@ button:hover {
   }
 
   .book-form p {
-    color: #6c6c6d;
     font-size: 0.6rem;
   }
 
@@ -1355,6 +1320,7 @@ button:hover {
     gap: 90px;
     font-size: 0.6rem;
   }
+
   .container-account table {
     font-size: 0.6rem;
   }
@@ -1389,6 +1355,22 @@ button:hover {
 
   .container-list-jadwal {
     font-size: 1.2rem;
+  }
+
+  .form-login-container .main img {
+    width: 75%;
+  }
+
+  .register-main,
+  .login-main {
+    flex-direction: column;
+    text-align: center;
+    margin: 20px;
+    padding: 0px;
+  }
+
+  .btn-container {
+    flex-direction: column;
   }
 }
 
@@ -1451,7 +1433,7 @@ button:hover {
   }
 
   .Rectangle-5 {
-    width: 100vw;
+    width: 100%;
     height: 60px;
     background-color: var(--primary);
     color: var(--background);
@@ -1460,6 +1442,7 @@ button:hover {
     align-items: center;
     font-size: 0.9rem;
   }
+
   .footer-link {
     font-size: 0.8rem;
   }
@@ -1472,10 +1455,6 @@ button:hover {
   .footer .contact-us .phone p,
   .email p {
     font-size: 0.8rem;
-  }
-
-  .book-form p {
-    color: #6c6c6d;
   }
 
   .divlabel-1,
@@ -1496,6 +1475,7 @@ button:hover {
     gap: 10vw;
     font-size: 0.5rem;
   }
+
   .container-account table {
     font-size: 0.6rem;
   }
@@ -1526,8 +1506,8 @@ button:hover {
 
   .ourteam {
     transform: scale(0.7);
+    margin-top: -70px;
   }
-
 
   .main {
     transform: scale(0.7);

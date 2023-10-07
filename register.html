@@ -4,22 +4,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/main.css" />
-  <title>Form Register</title>
+  <title>Register Form</title>
 </head>
 
 <body>
   <!-- Navbar -->
   <nav class="navbar">
     <div class="navbar-logo">
-      <a href=""><img src="assets/svg/logo.svg" alt="" /></a>
+      <a href="index.html"><img src="assets/svg/logo.svg" alt="" /></a>
     </div>
     <div id="dropdown" data-visible="false" class="navbar-nav">
       <div class="navbar-middle">
-        <a href="index.html" class="active">Home</a>
+        <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
         <a href="plan-your-visit.html">Plan Your Visit</a>
-        <a href="profile-page.html">Book Appointment</a>
+        <a href="list-doctor.html">Book Appointment</a>
       </div>
       <div class="navbar-login">
         <a href="login.html" class="login">Login</a>
@@ -35,37 +39,31 @@
   <!-- Navbar End -->
 
   <!-- Form Login Start -->
-  <main>
-    <div class="register-container">
-      <h2>Register</h2>
-      <form id="registrationForm">
-        <div>
-          <label for="username">Username</label>
-          <input type="text" name="username" id="username" />
-        </div>
-        <div>
-          <label for="email">Email</label>
-          <input type="email" name="email" id="email" />
-        </div>
-        <div>
-          <label for="password">Password</label>
-          <input type="password" name="password" id="password" />
-        </div>
-        <div>
-          <button>Register</button>
-        </div>
-      </form>
-      <p id="register-message" class="error-message"></p>
+  <div class="register-main">
+    <div class="konten">
+      <img src="./assets/img/regis.jpg" />
     </div>
-    <!-- <div class="left">
-            <img src="asset/img/regis.jpg" alt="regis">
-        </div> -->
-  </main>
+    <div class="konten">
+      <h1>Create New Account</h1>
+      <form id="registrationForm" action="" class="regisForm" autocomplete="off">
+        <label for="username">Username</label>
+        <input type="text" id="form-username" name="username" placeholder="Enter Username" maxlength="25" required
+          autofocus />
+        <label for="email">Email</label>
+        <input type="email" id="form-email" name="email" placeholder="Enter Email" required autofocus />
+        <label for="password">Password</label>
+        <input type="password" id="form-password" name="password" placeholder="Enter Password" required autofocus />
+        <p>Password required: Use at least 5 characters one uppercase one lowercase</p>
+        <button id="submit-btn" name="submit">Create Account</button>
+        <p>Already have account? <a href="login.html"> Login Now </a></p>
+      </form>
+    </div>
+  </div>
 
   <!-- start of footer -->
   <footer class="footer">
     <div class="footer-logo">
-      <a href="">
+      <a href="index.html">
         <img src="assets/svg/logo-white.svg" alt="Our Orthos Logo" />
       </a>
     </div>
@@ -73,16 +71,16 @@
       <p class="footer-title">Menu</p>
       <ul>
         <li>
-          <a href="">Home</a>
+          <a href="index.html">Home</a>
         </li>
         <li>
-          <a href="">About Us</a>
+          <a href="about.html">About Us</a>
         </li>
         <li>
-          <a href="">Plan Your Visit</a>
+          <a href="plan-your-visit.html">Plan Your Visit</a>
         </li>
         <li>
-          <a href="">Book Appointment</a>
+          <a href="list-doctor.html">Book Appointment</a>
         </li>
       </ul>
     </div>
