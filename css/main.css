@@ -858,9 +858,7 @@ input[type="password"] {
   border: 1px solid #ccc;
   border-radius: 50px;
 }
-input[type="text"] {
-  text-transform: capitalize;
-}
+
 .register-main .konten button,
 .login-main .konten button {
   font-size: large;
