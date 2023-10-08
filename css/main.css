@@ -863,6 +863,7 @@ h1 {
 .login-main .konten {
   flex: 1;
   padding: 20px;
+
 }
 
 .register-main .konten img,
@@ -875,6 +876,14 @@ h1 {
   margin-bottom: 10px;
 }
 
+.register-main .konten img,
+.login-main .konten img {
+  width: 90%;
+}
+.register-main .konten input,
+.login-main .konten input {
+  margin-bottom: 10px;
+}
 input[type="text"],
 input[type="email"],
 input[type="password"] {
