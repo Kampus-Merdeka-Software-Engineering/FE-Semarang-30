@@ -32,10 +32,10 @@ overlay.addEventListener("click", () => {
 function getCookie(name) {
   const value = `; ${document.cookie}`;
   const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop().split(';').shift();
+  if (parts.length === 2) return parts.pop().split(";").shift();
 }
 
-const userUsername = getCookie('user_username');
+const userUsername = getCookie("user_username");
 
 const navbarProfile = document.querySelector(".navbar-login");
 if (userUsername) {
@@ -47,7 +47,11 @@ if (userUsername) {
 // For specific pages
 const currentPage = window.location.pathname;
 
-if (currentPage === "/FE-Semarang-30/" || currentPage === "/FE-Semarang-30/index.html" || currentPage === "/FE-Semarang-30/about.html") {
+if (
+  currentPage === "/FE-Semarang-30/" ||
+  currentPage === "/FE-Semarang-30/index.html" ||
+  currentPage === "/FE-Semarang-30/about.html"
+) {
   // SET INTERVAL FOR CAROUSEL SERVIVES
 
   const carousel = document.querySelector(".carousel");
@@ -93,27 +97,45 @@ if (currentPage === "/FE-Semarang-30/list-doctor.html") {
   const doctorData = [
     {
       name: "drg. Wisis Arif Setiawan K D, Sp.KGA (Pedodonti/Gigi Anak)",
-      schedule: ["Senin - Rabu : 09.00 - 14.00", "Kamis - Jumat : 15.00 - 19.00"],
+      schedule: [
+        "Senin - Rabu : 09.00 - 14.00",
+        "Kamis - Jumat : 15.00 - 19.00",
+      ],
     },
     {
       name: "drg. Zahra Maysani",
-      schedule: ["Senin - Rabu : 09.00 - 14.00", "Kamis - Jumat : 15.00 - 19.00"],
+      schedule: [
+        "Senin - Rabu : 09.00 - 14.00",
+        "Kamis - Jumat : 15.00 - 19.00",
+      ],
     },
     {
       name: "drg. Erna Listiana Dewi, MPH",
-      schedule: ["Senin - Rabu : 09.00 - 14.00", "Kamis - Jumat : 15.00 - 19.00"],
+      schedule: [
+        "Senin - Rabu : 09.00 - 14.00",
+        "Kamis - Jumat : 15.00 - 19.00",
+      ],
     },
     {
       name: "drg. Rafaell Victor Christian, Sp.KG",
-      schedule: ["Senin - Rabu : 15.00 - 19.00", "Kamis - Jumat : 09.00 - 14.00"],
+      schedule: [
+        "Senin - Rabu : 15.00 - 19.00",
+        "Kamis - Jumat : 09.00 - 14.00",
+      ],
     },
     {
       name: "drg. Andhika Hanif Prasetyo K Sp.KGA",
-      schedule: ["Senin - Rabu : 15.00 - 19.00", "Kamis - Jumat : 09.00 - 14.00"],
+      schedule: [
+        "Senin - Rabu : 15.00 - 19.00",
+        "Kamis - Jumat : 09.00 - 14.00",
+      ],
     },
     {
       name: "drg. Anggita Prameswari K Sp.KGA",
-      schedule: ["Senin - Rabu : 15.00 - 19.00", "Kamis - Jumat : 09.00 - 14.00"],
+      schedule: [
+        "Senin - Rabu : 15.00 - 19.00",
+        "Kamis - Jumat : 09.00 - 14.00",
+      ],
     },
 
     // Tambahkan data dokter dan jadwal lainnya di sini
@@ -157,21 +179,17 @@ if (currentPage === "/FE-Semarang-30/list-doctor.html") {
   window.addEventListener("load", populateDoctorList);
 }
 
-// Punya Ara
-
-
 // Profile
 if (currentPage === "/FE-Semarang-30/profile-page.html") {
   // Mendapatkan nilai cookie 'user_id'
   function getCookie(name) {
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
+    if (parts.length === 2) return parts.pop().split(";").shift();
   }
 
-
   // Menggunakan fungsi getCookie untuk mendapatkan nilai 'user_id'
-  const user_id = getCookie('user_id');
+  const user_id = getCookie("user_id");
   if (user_id) {
     const getHiUsername = document.querySelector("#hiUsername");
     const getUsername = document.querySelector("#username");
@@ -181,7 +199,9 @@ if (currentPage === "/FE-Semarang-30/profile-page.html") {
     const getDate = document.querySelector("#date");
     const getTime = document.querySelector("#time");
 
-    fetch(`http://localhost:3000/users?user_id=${user_id}`)
+    fetch(
+      `https://be-semarang-30-production.up.railway.app/users?user_id=${user_id}`
+    )
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -199,7 +219,9 @@ if (currentPage === "/FE-Semarang-30/profile-page.html") {
         }
       });
 
-    fetch(`http://localhost:3000/appointments/find?user_id=${user_id}`)
+    fetch(
+      `https://be-semarang-30-production.up.railway.app/appointments/find?user_id=${user_id}`
+    )
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -222,28 +244,26 @@ if (currentPage === "/FE-Semarang-30/profile-page.html") {
       });
 
     // Mendapatkan tombol logout berdasarkan ID atau class
-    const logoutButton = document.getElementById('logoutButton'); // Ganti 'logoutButton' dengan ID atau class yang sesuai
+    const logoutButton = document.getElementById("logoutButton"); // Ganti 'logoutButton' dengan ID atau class yang sesuai
 
     // Menambahkan event listener ke tombol logout
-    logoutButton.addEventListener('click', function () {
+    logoutButton.addEventListener("click", function () {
       // Menghapus semua cookie
-      const cookies = document.cookie.split(';');
+      const cookies = document.cookie.split(";");
       for (let i = 0; i < cookies.length; i++) {
         const cookie = cookies[i];
-        const eqPos = cookie.indexOf('=');
+        const eqPos = cookie.indexOf("=");
         const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-        document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';
+        document.cookie =
+          name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
       }
 
       // Mengarahkan pengguna kembali ke halaman login
-      window.location.href = '/FE-Semarang-30/login.html'; // Ganti '/login.html' dengan URL halaman login Anda
+      window.location.href = "/FE-Semarang-30/login.html"; // Ganti '/login.html' dengan URL halaman login Anda
     });
   } else {
     window.location.href = "/FE-Semarang-30/login.html";
   }
-
-
-
 }
 
 // Booking Form
@@ -252,11 +272,11 @@ if (currentPage === "/FE-Semarang-30/booking-form.html") {
   function getCookie(name) {
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
+    if (parts.length === 2) return parts.pop().split(";").shift();
   }
 
   // Menggunakan fungsi getCookie untuk mendapatkan nilai 'user_id'
-  const user_id = getCookie('user_id');
+  const user_id = getCookie("user_id");
   if (user_id) {
     // Dentist select
     let selectDentist = document.querySelector("#selectDentist");
@@ -277,7 +297,7 @@ if (currentPage === "/FE-Semarang-30/booking-form.html") {
     ];
 
     // Fetch dentist api
-    fetch("http://localhost:3000/dentists")
+    fetch("https://be-semarang-30-production.up.railway.app/dentists")
       .then((response) => response.json())
       .then((data) => {
         data.forEach((dentists) => {
@@ -292,7 +312,7 @@ if (currentPage === "/FE-Semarang-30/booking-form.html") {
       });
 
     // Fetch date api
-    fetch("http://localhost:3000/schedule_dates")
+    fetch("https://be-semarang-30-production.up.railway.app/schedule_dates")
       .then((response) => response.json())
       .then((data) => {
         data.forEach((schedule_dates) => {
@@ -309,7 +329,7 @@ if (currentPage === "/FE-Semarang-30/booking-form.html") {
     // Fetch time api
     function fetchTime(dentist_id, dentist_schedule_day) {
       fetch(
-        `http://localhost:3000/schedule_times/dentist_schedules?dentist_id=${dentist_id}&dentist_schedule_day=${dentist_schedule_day}`
+        `https://be-semarang-30-production.up.railway.app/schedule_times/dentist_schedules?dentist_id=${dentist_id}&dentist_schedule_day=${dentist_schedule_day}`
       )
         .then((response) => {
           if (response.ok) {
@@ -377,7 +397,7 @@ if (currentPage === "/FE-Semarang-30/booking-form.html") {
       ) {
         alert("Please choose dentist, date, and time!");
       } else {
-        fetch("http://localhost:3000/appointments", {
+        fetch("https://be-semarang-30-production.up.railway.app/appointments", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -419,7 +439,7 @@ if (currentPage === "/FE-Semarang-30/login.html") {
     const loginPassword = document.querySelector("#form-password").value;
 
     fetch(
-      `http://localhost:3000/users/login?user_email=${loginEmail}&user_password=${loginPassword}`
+      `https://be-semarang-30-production.up.railway.app/users/login?user_email=${loginEmail}&user_password=${loginPassword}`
     )
       .then((response) => {
         if (response.ok) {
@@ -459,7 +479,9 @@ if (currentPage === "/FE-Semarang-30/register.html") {
     const email = document.querySelector("#form-email").value;
     const password = document.querySelector("#form-password").value;
 
-    fetch(`http://localhost:3000/users/email?user_email=${email}`)
+    fetch(
+      `https://be-semarang-30-production.up.railway.app/users/email?user_email=${email}`
+    )
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -476,7 +498,7 @@ if (currentPage === "/FE-Semarang-30/register.html") {
           } else if (!/[A-Z]/.test(password) || !/[a-z]/.test(password)) {
             alert("Please use a combination of uppercase and lowercase");
           } else {
-            fetch("http://localhost:3000/users", {
+            fetch("https://be-semarang-30-production.up.railway.app/users", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
