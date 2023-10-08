@@ -169,88 +169,80 @@ if (currentPage === "/FE-Semarang-30/profile-page.html") {
     if (parts.length === 2) return parts.pop().split(';').shift();
   }
 
+
   // Menggunakan fungsi getCookie untuk mendapatkan nilai 'user_id'
   const user_id = getCookie('user_id');
-
   if (user_id) {
-    // Gunakan nilai 'user_id' sesuai kebutuhan Anda
-    console.log('User ID:', user_id);
+    const getHiUsername = document.querySelector("#hiUsername");
+    const getUsername = document.querySelector("#username");
+    const getEmail = document.querySelector("#email");
+
+    const getDentist = document.querySelector("#dentist");
+    const getDate = document.querySelector("#date");
+    const getTime = document.querySelector("#time");
+
+    fetch(`http://localhost:3000/users?user_id=${user_id}`)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Network response was not ok");
+        }
+      })
+      .then((data) => {
+        if (data) {
+          getHiUsername.textContent = `Hi, ${data.user_username}`;
+          getUsername.textContent = `${data.user_username}`;
+          getEmail.textContent = `${data.user_email}`;
+        } else {
+          window.location.href = "/FE-Semarang-30/login.html";
+        }
+      });
+
+    fetch(`http://localhost:3000/appointments/find?user_id=${user_id}`)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Network response was not ok");
+        }
+      })
+      .then((data) => {
+        if (data.length > 0) {
+          const appointments = data[0];
+
+          getDentist.textContent = `${appointments.dentist_name}`;
+          getDate.textContent = `${appointments.schedule_date_date}`;
+          getTime.textContent = `${appointments.schedule_time_start} - ${appointments.schedule_time_end}`;
+        } else {
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+
+    // Mendapatkan tombol logout berdasarkan ID atau class
+    const logoutButton = document.getElementById('logoutButton'); // Ganti 'logoutButton' dengan ID atau class yang sesuai
+
+    // Menambahkan event listener ke tombol logout
+    logoutButton.addEventListener('click', function () {
+      // Menghapus semua cookie
+      const cookies = document.cookie.split(';');
+      for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i];
+        const eqPos = cookie.indexOf('=');
+        const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';
+      }
+
+      // Mengarahkan pengguna kembali ke halaman login
+      window.location.href = '/FE-Semarang-30/login.html'; // Ganti '/login.html' dengan URL halaman login Anda
+    });
   } else {
-    // Jika cookie 'user_id' tidak ditemukan
-    console.log('Cookie "user_id" tidak ditemukan.');
+    window.location.href = "/FE-Semarang-30/login.html";
   }
 
 
-  console.log(user_id);
-
-  const getHiUsername = document.querySelector("#hiUsername");
-  const getUsername = document.querySelector("#username");
-  const getEmail = document.querySelector("#email");
-
-  const getDentist = document.querySelector("#dentist");
-  const getDate = document.querySelector("#date");
-  const getTime = document.querySelector("#time");
-
-  const getAppointment = document.querySelector("#getAppointment");
-
-  fetch(`http://localhost:3000/users?user_id=${user_id}`)
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error("Network response was not ok");
-      }
-    })
-    .then((data) => {
-      if (data) {
-        console.log(data);
-        getHiUsername.textContent = `Hi, ${data.user_username}`;
-        getUsername.textContent = `${data.user_username}`;
-        getEmail.textContent = `${data.user_email}`;
-      } else {
-        window.location.href = "/FE-Semarang-30/login.html";
-      }
-    });
-
-  fetch(`http://localhost:3000/appointments/find?user_id=${user_id}`)
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error("Network response was not ok");
-      }
-    })
-    .then((data) => {
-      if (data.length > 0) {
-        const appointments = data[0];
-
-        getDentist.textContent = `${appointments.dentist_name}`;
-        getDate.textContent = `${appointments.schedule_date_date}`;
-        getTime.textContent = `${appointments.schedule_time_start} - ${appointments.schedule_time_end}`;
-      } else {
-      }
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
-
-  // Mendapatkan tombol logout berdasarkan ID atau class
-  const logoutButton = document.getElementById('logoutButton'); // Ganti 'logoutButton' dengan ID atau class yang sesuai
-
-  // Menambahkan event listener ke tombol logout
-  logoutButton.addEventListener('click', function () {
-    // Menghapus semua cookie
-    const cookies = document.cookie.split(';');
-    for (let i = 0; i < cookies.length; i++) {
-      const cookie = cookies[i];
-      const eqPos = cookie.indexOf('=');
-      const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-      document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';
-    }
-
-    // Mengarahkan pengguna kembali ke halaman login
-    window.location.href = '/FE-Semarang-30/login.html'; // Ganti '/login.html' dengan URL halaman login Anda
-  });
 
 }
 
@@ -265,17 +257,7 @@ if (currentPage === "/FE-Semarang-30/booking-form.html") {
 
   // Menggunakan fungsi getCookie untuk mendapatkan nilai 'user_id'
   const user_id = getCookie('user_id');
-
   if (user_id) {
-    // Gunakan nilai 'user_id' sesuai kebutuhan Anda
-    console.log('User ID:', user_id);
-  } else {
-    // Jika cookie 'user_id' tidak ditemukan
-    console.log('Cookie "user_id" tidak ditemukan.');
-  }
-
-  if (user_id) {
-    console.log(user_id);
     // Dentist select
     let selectDentist = document.querySelector("#selectDentist");
     // Date select
@@ -326,10 +308,6 @@ if (currentPage === "/FE-Semarang-30/booking-form.html") {
 
     // Fetch time api
     function fetchTime(dentist_id, dentist_schedule_day) {
-      console.log(
-        `http://localhost:3000/schedule_times/dentist_schedules?dentist_id=${dentist_id}&dentist_schedule_day=${dentist_schedule_day}`
-      );
-
       fetch(
         `http://localhost:3000/schedule_times/dentist_schedules?dentist_id=${dentist_id}&dentist_schedule_day=${dentist_schedule_day}`
       )
@@ -363,8 +341,6 @@ if (currentPage === "/FE-Semarang-30/booking-form.html") {
       let date = selectedDate.getDay();
 
       const selectedDay = dayNames[date];
-      console.log(selectedDentist, selectedDay);
-
       fetchTime(selectedDentist, selectedDay);
     });
 
@@ -376,8 +352,6 @@ if (currentPage === "/FE-Semarang-30/booking-form.html") {
       let date = selectedDate.getDay();
 
       const selectedDay = dayNames[date];
-      console.log(selectedDentist, selectedDay);
-
       fetchTime(selectedDentist, selectedDay);
     });
 
@@ -467,9 +441,6 @@ if (currentPage === "/FE-Semarang-30/login.html") {
           document.cookie = `user_username=${user_username}; expires=Thu, 01 Jan 2099 00:00:00 UTC; path=/`;
 
           window.location.href = "/FE-Semarang-30/index.html";
-
-          console.log("Logged in user id:", user_id);
-          console.log("Logged in user username:", user_username);
         } else {
           console.error("Error fetching times:", error);
         }
