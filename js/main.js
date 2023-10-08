@@ -208,7 +208,7 @@ if (currentPage === "/FE-Semarang-30/profile-page.html") {
         getUsername.textContent = `${data.user_username}`;
         getEmail.textContent = `${data.user_email}`;
       } else {
-        window.location.href = "/login.html";
+        window.location.href = "/FE-Semarang-30/login.html";
       }
     });
 
@@ -249,7 +249,7 @@ if (currentPage === "/FE-Semarang-30/profile-page.html") {
     }
 
     // Mengarahkan pengguna kembali ke halaman login
-    window.location.href = '/login.html'; // Ganti '/login.html' dengan URL halaman login Anda
+    window.location.href = '/FE-Semarang-30/login.html'; // Ganti '/login.html' dengan URL halaman login Anda
   });
 
 }
@@ -419,7 +419,7 @@ if (currentPage === "/FE-Semarang-30/booking-form.html") {
           .then((response) => {
             if (response.ok) {
               alert("Appointment booked!");
-              window.location.href = "/index.html";
+              window.location.href = "/FE-Semarang-30/index.html";
             } else {
               alert("Book appointment failed!");
             }
@@ -430,7 +430,7 @@ if (currentPage === "/FE-Semarang-30/booking-form.html") {
       }
     });
   } else {
-    window.location.href = "/login.html";
+    window.location.href = "/FE-Semarang-30/login.html";
   }
 }
 
@@ -466,7 +466,7 @@ if (currentPage === "/FE-Semarang-30/login.html") {
           // Mengatur cookie untuk user_username
           document.cookie = `user_username=${user_username}; expires=Thu, 01 Jan 2099 00:00:00 UTC; path=/`;
 
-          window.location.href = "/index.html";
+          window.location.href = "/FE-Semarang-30/index.html";
 
           console.log("Logged in user id:", user_id);
           console.log("Logged in user username:", user_username);
@@ -520,7 +520,7 @@ if (currentPage === "/FE-Semarang-30/register.html") {
               .then((response) => {
                 if (response.ok) {
                   alert("Registrasi berhasil");
-                  window.location.href = "/login.html";
+                  window.location.href = "/FE-Semarang-30/login.html";
                 } else {
                   alert("Registrasi gagal");
                 }
