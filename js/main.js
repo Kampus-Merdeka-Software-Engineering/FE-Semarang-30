@@ -47,7 +47,7 @@ if (userUsername) {
 // For specific pages
 const currentPage = window.location.pathname;
 
-if (currentPage === "/index.html" || currentPage === "/about.html") {
+if (currentPage === "/FE-Semarang-30/index.html" || currentPage === "/FE-Semarang-30/about.html") {
   // SET INTERVAL FOR CAROUSEL SERVIVES
 
   const carousel = document.querySelector(".carousel");
@@ -161,7 +161,7 @@ if (currentPage === "/FE-Semarang-30/list-doctor.html") {
 
 
 // Profile
-if (currentPage === "/profile-page.html") {
+if (currentPage === "/FE-Semarang-30/profile-page.html") {
   // Mendapatkan nilai cookie 'user_id'
   function getCookie(name) {
     const value = `; ${document.cookie}`;
@@ -255,7 +255,7 @@ if (currentPage === "/profile-page.html") {
 }
 
 // Booking Form
-if (currentPage === "/booking-form.html") {
+if (currentPage === "/FE-Semarang-30/booking-form.html") {
   // Mendapatkan nilai cookie 'user_id'
   function getCookie(name) {
     const value = `; ${document.cookie}`;
@@ -435,7 +435,7 @@ if (currentPage === "/booking-form.html") {
 }
 
 // Login
-if (currentPage === "/login.html") {
+if (currentPage === "/FE-Semarang-30/login.html") {
   const loginForm = document.querySelector("#loginForm");
 
   loginForm.addEventListener("submit", (event) => {
@@ -478,7 +478,7 @@ if (currentPage === "/login.html") {
 }
 
 // Register
-if (currentPage === "/register.html") {
+if (currentPage === "/FE-Semarang-30/register.html") {
   const registrationForm = document.querySelector("#registrationForm");
 
   registrationForm.addEventListener("submit", (event) => {
