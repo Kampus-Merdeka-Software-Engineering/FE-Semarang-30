@@ -438,31 +438,33 @@ if (currentPage === "/FE-Semarang-30/login.html") {
     const loginEmail = document.querySelector("#form-email").value;
     const loginPassword = document.querySelector("#form-password").value;
 
-    fetch("https://be-semarang-30-production.up.railway.app/users/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        user_email: loginEmail,
-        user_password: loginPassword,
-      }),
-    }).then((data) => {
-      if (data.user_id && data.user_username) {
-        const user_id = data.user_id;
-        const user_username = data.user_username;
+    fetch(
+      `https://be-semarang-30-production.up.railway.app/users/login?user_email=${loginEmail}&user_password=${loginPassword}`
+    )
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          alert("Wrong Email/Password");
+          throw new Error("Authentication failed");
+        }
+      })
+      .then((data) => {
+        if (data.user_id && data.user_username) {
+          const user_id = data.user_id;
+          const user_username = data.user_username;
 
-        // Mengatur cookie untuk user_id
-        document.cookie = `user_id=${user_id}; expires=Thu, 01 Jan 2099 00:00:00 UTC; path=/`;
+          // Mengatur cookie untuk user_id
+          document.cookie = `user_id=${user_id}; expires=Thu, 01 Jan 2099 00:00:00 UTC; path=/`;
 
-        // Mengatur cookie untuk user_username
-        document.cookie = `user_username=${user_username}; expires=Thu, 01 Jan 2099 00:00:00 UTC; path=/`;
+          // Mengatur cookie untuk user_username
+          document.cookie = `user_username=${user_username}; expires=Thu, 01 Jan 2099 00:00:00 UTC; path=/`;
 
-        window.location.href = "/FE-Semarang-30/index.html";
-      } else {
-        console.error("Error:", error);
-      }
-    });
+          window.location.href = "/FE-Semarang-30/index.html";
+        } else {
+          console.error("Error fetching times:", error);
+        }
+      });
   });
 }
 
