@@ -438,7 +438,7 @@ if (currentPage === "/FE-Semarang-30/login.html") {
     const loginEmail = document.querySelector("#form-email").value;
     const loginPassword = document.querySelector("#form-password").value;
 
-    fetch("http://localhost:3000/users/login", {
+    fetch("https://be-semarang-30-production.up.railway.app/users/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
