@@ -89,7 +89,7 @@ if (currentPage === "/index.html" || currentPage === "/about.html") {
 
 //list doctor
 
-if (currentPage === "FE-Semarang-30/list-doctor.html") {
+if (currentPage === "/FE-Semarang-30/list-doctor.html") {
   const doctorData = [
     {
       name: "drg. Wisis Arif Setiawan K D, Sp.KGA (Pedodonti/Gigi Anak)",
