@@ -47,7 +47,7 @@ if (userUsername) {
 // For specific pages
 const currentPage = window.location.pathname;
 
-if (currentPage === "/FE-Semarang-30/index.html" || currentPage === "/FE-Semarang-30/about.html") {
+if (currentPage === "/FE-Semarang-30/" || currentPage === "/FE-Semarang-30/index.html" || currentPage === "/FE-Semarang-30/about.html") {
   // SET INTERVAL FOR CAROUSEL SERVIVES
 
   const carousel = document.querySelector(".carousel");
