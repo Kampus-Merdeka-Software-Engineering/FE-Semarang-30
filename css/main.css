@@ -211,6 +211,7 @@ footer .copyright {
   border-radius: 50px;
   font-weight: bold;
 }
+
 .erna-hero-section .column a:hover {
   background-color: gray;
   color: var(--background);
@@ -285,6 +286,7 @@ footer .copyright {
 .erna-carousel-container .carousel .service h3 {
   margin-top: 10px;
 }
+
 /* END OF INDEX STYLE */
 
 /* START OF ABOUT US STYLE  */
@@ -358,6 +360,7 @@ footer .copyright {
   height: 53px;
   flex-shrink: 0;
 }
+
 /* End Almamater Logo */
 
 /* container visi misi */
@@ -380,7 +383,8 @@ footer .copyright {
   height: 260px;
   padding: 64.19000244140625px 50px 81.19998168945312px 50px;
   border-radius: 10px;
-  background: #294b67;
+  background: var(--primary);
+  color: var(--background);
   margin-top: 30px;
 }
 
@@ -389,7 +393,8 @@ footer .copyright {
   height: 230px;
   padding: 64.19000244140625px 50px 81.19998168945312px 50px;
   border-radius: 10px;
-  background: #294b67;
+  background: var(--primary);
+  color: var(--background);
   margin-top: 30px;
 }
 
@@ -397,7 +402,8 @@ footer .copyright {
   width: 570px;
   height: 525px;
   padding: 56px 50px 55px 50px;
-  background: #294b67;
+  background: var(--primary);
+  color: var(--background);
   border-radius: 10px;
   margin-left: 30px;
 }
@@ -471,6 +477,17 @@ footer .copyright {
 .containerdiv1-6 {
   margin-bottom: 115px;
 }
+
+.title-award {
+margin-bottom: 60px;
+}
+
+.title-award h2{
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+
 /* END OF ABOUT US HTML */
 
 /* VISIT YOUR PLAN */
@@ -645,7 +662,8 @@ th {
   text-align: center;
 }
 
-.book-2 a {
+.book-2 a,
+button {
   background-color: var(--primary);
   color: var(--secondary);
   border-radius: 5px;
@@ -684,6 +702,7 @@ th {
   margin: 0 auto 20px auto;
   font-size: 1.3rem;
 }
+
 .book-form p {
   color: #6c6c6d;
   font-size: 0.9rem;
@@ -705,6 +724,7 @@ th {
   cursor: pointer;
   border-radius: 5px;
 }
+
 .divlabel-1,
 .divlabel-2 {
   font-weight: bolder;
@@ -750,9 +770,11 @@ h1 {
   border: none;
   margin-top: 1rem;
 }
+
 .noborder {
   border: none;
 }
+
 .manualborder {
   border: none;
   padding: 5px 0 5px 10px;
@@ -802,6 +824,7 @@ h1 {
   margin: 20px auto 50px auto;
   background-color: var(--secondary);
 }
+
 .container-list-jadwal h3 {
   text-align: center;
 }
@@ -840,6 +863,17 @@ h1 {
 .login-main .konten {
   flex: 1;
   padding: 20px;
+
+}
+
+.register-main .konten img,
+.login-main .konten img {
+  width: 90%;
+}
+
+.register-main .konten input,
+.login-main .konten input {
+  margin-bottom: 10px;
 }
 
 .register-main .konten img,
@@ -885,6 +919,7 @@ input[type="password"] {
   text-decoration: none;
   color: white;
 }
+
 .register-main .konten button a:hover,
 .login-main .konten button a:hover {
   text-decoration: none;
@@ -955,6 +990,7 @@ input[type="password"] {
     gap: 100px;
     font-size: 0.9rem;
   }
+
   .container-account table {
     font-size: 0.8rem;
   }
@@ -1126,6 +1162,7 @@ input[type="password"] {
     gap: 100px;
     font-size: 0.7rem;
   }
+
   .container-account table {
     font-size: 0.7rem;
   }
@@ -1141,6 +1178,7 @@ input[type="password"] {
     font-size: 1.3rem;
     text-align: center;
   }
+
   .container-visi-misi {
     font-size: 0.9rem;
     transform: scale(0.9);
@@ -1150,6 +1188,7 @@ input[type="password"] {
   .container-list-jadwal {
     height: 250px;
   }
+
   #jadwal-dokter {
     text-align: center;
     font-size: 1.2rem;
@@ -1160,6 +1199,7 @@ input[type="password"] {
 
 /* Tablet */
 @media (max-width: 767.98px) {
+
   /* ERNA STYLE */
   /* START OF INDEX STYLE */
   .erna-hero-section {
@@ -1184,6 +1224,7 @@ input[type="password"] {
     padding: 0;
     max-width: 90%;
   }
+
   /* END OF INDEX STYLE */
 
   .hero {
@@ -1221,8 +1262,7 @@ input[type="password"] {
   }
 
   .what-to-do .steps .step .step-container .step-title p {
-    border-image: linear-gradient(to right, var(--third) 100%, transparent 100%)
-      1;
+    border-image: linear-gradient(to right, var(--third) 100%, transparent 100%) 1;
     margin: auto;
   }
 
@@ -1239,6 +1279,7 @@ input[type="password"] {
     align-items: center;
     font-size: 0.7rem;
   }
+
   .container-1,
   .container-2 {
     width: 100vw;
@@ -1288,6 +1329,7 @@ input[type="password"] {
     gap: 90px;
     font-size: 0.6rem;
   }
+
   .container-account table {
     font-size: 0.6rem;
   }
@@ -1409,6 +1451,7 @@ input[type="password"] {
     align-items: center;
     font-size: 0.9rem;
   }
+
   .footer-link {
     font-size: 0.8rem;
   }
@@ -1441,6 +1484,7 @@ input[type="password"] {
     gap: 10vw;
     font-size: 0.5rem;
   }
+
   .container-account table {
     font-size: 0.6rem;
   }
@@ -1471,6 +1515,7 @@ input[type="password"] {
 
   .ourteam {
     transform: scale(0.7);
+    margin-top: -70px;
   }
 
   .main {

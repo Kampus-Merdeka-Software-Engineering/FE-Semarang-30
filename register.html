@@ -1,146 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/main.css" />
-    <title>Register Form</title>
-  </head>
 
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-      <div class="navbar-logo">
-        <a href="index.html"><img src="assets/svg/logo.svg" alt="" /></a>
-      </div>
-      <div id="dropdown" data-visible="false" class="navbar-nav">
-        <div class="navbar-middle">
-          <a href="index.html">Home</a>
-          <a href="about.html">About Us</a>
-          <a href="plan-your-visit.html">Plan Your Visit</a>
-          <a href="profile-page.html">Book Appointment</a>
-        </div>
-        <div class="navbar-login">
-          <a href="login.html" class="login">Login</a>
-        </div>
-      </div>
-      <div class="navbar-right">
-        <a aria-controls="dropdown" aria-expanded="false" class="menu">
-          <img class="menu-img" src="assets/svg/menu.svg" alt="" />
-        </a>
-      </div>
-      <div data-visible="false" class="overlay"></div>
-    </nav>
-    <!-- Navbar End -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <title>Register Form</title>
+</head>
 
-    <!-- Form Login Start -->
-    <div class="register-main">
-      <div class="konten">
-        <img src="./assets/img/regis.jpg" />
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <a href="index.html"><img src="assets/svg/logo.svg" alt="" /></a>
+    </div>
+    <div id="dropdown" data-visible="false" class="navbar-nav">
+      <div class="navbar-middle">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="plan-your-visit.html">Plan Your Visit</a>
+        <a href="list-doctor.html">Book Appointment</a>
       </div>
-      <div class="konten">
-        <h1>Create New Account</h1>
-        <form
-          id="registrationForm"
-          action=""
-          class="regisForm"
-          autocomplete="off"
-        >
-          <label for="username">Username</label>
-          <input
-            type="text"
-            id="form-username"
-            name="username"
-            placeholder="Enter Username"
-            maxlength="25"
-            required
-            autofocus
-          />
-          <label for="email">Email</label>
-          <input
-            type="email"
-            id="form-email"
-            name="email"
-            placeholder="Enter Email"
-            required
-            autofocus
-          />
-          <label for="password">Password</label>
-          <input
-            type="password"
-            id="form-password"
-            name="password"
-            placeholder="Enter Password"
-            required
-            autofocus
-          />
-          <button id="submit-btn" name="submit">Create Account</button>
-          <p>Already have account? <a href="login.html"> Login Now </a></p>
-        </form>
+      <div class="navbar-login">
+        <a href="login.html" class="login">Login</a>
       </div>
     </div>
+    <div class="navbar-right">
+      <a aria-controls="dropdown" aria-expanded="false" class="menu">
+        <img class="menu-img" src="assets/svg/menu.svg" alt="" />
+      </a>
+    </div>
+    <div data-visible="false" class="overlay"></div>
+  </nav>
+  <!-- Navbar End -->
 
-    <!-- start of footer -->
-    <footer class="footer">
-      <div class="footer-logo">
-        <a href="index.html">
-          <img src="assets/svg/logo-white.svg" alt="Our Orthos Logo" />
+  <!-- Form Login Start -->
+  <div class="register-main">
+    <div class="konten">
+      <img src="./assets/img/regis.jpg" />
+    </div>
+    <div class="konten">
+      <h1>Create New Account</h1>
+      <form id="registrationForm" action="" class="regisForm" autocomplete="off">
+        <label for="username">Username</label>
+        <input type="text" id="form-username" name="username" placeholder="Enter Username" maxlength="25" required
+          autofocus />
+        <label for="email">Email</label>
+        <input type="email" id="form-email" name="email" placeholder="Enter Email" required autofocus />
+        <label for="password">Password</label>
+        <input type="password" id="form-password" name="password" placeholder="Enter Password" required autofocus />
+        <p>Password required: Use at least 5 characters one uppercase one lowercase</p>
+        <button id="submit-btn" name="submit">Create Account</button>
+        <p>Already have account? <a href="login.html"> Login Now </a></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- start of footer -->
+  <footer class="footer">
+    <div class="footer-logo">
+      <a href="index.html">
+        <img src="assets/svg/logo-white.svg" alt="Our Orthos Logo" />
+      </a>
+    </div>
+    <div class="footer-link">
+      <p class="footer-title">Menu</p>
+      <ul>
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <a href="about.html">About Us</a>
+        </li>
+        <li>
+          <a href="plan-your-visit.html">Plan Your Visit</a>
+        </li>
+        <li>
+          <a href="list-doctor.html">Book Appointment</a>
+        </li>
+      </ul>
+    </div>
+    <div class="contact-us">
+      <p class="footer-title">Contact Us</p>
+      <div class="phone">
+        <img src="assets/svg/phone.svg" alt="Phone Icon" />
+        <p>021 - 98765</p>
+      </div>
+      <div class="email">
+        <img src="assets/svg/message.svg" alt="Message Icon" />
+        <p>ourorthos@gmail.com</p>
+      </div>
+    </div>
+    <div class="follow">
+      <p class="footer-title">Follow Us On</p>
+      <div class="sosmed-icon">
+        <a href="whatsapp.com">
+          <img src="assets/svg/whatsapp.svg" alt="Whatsapp Icon" />
+        </a>
+        <a href="instagram.com">
+          <img src="assets/svg/instagram.svg" alt="Instagram Icon" />
+        </a>
+        <a href="facebook.com">
+          <img src="assets/svg/facebook.svg" alt="Facebook Icon" />
         </a>
       </div>
-      <div class="footer-link">
-        <p class="footer-title">Menu</p>
-        <ul>
-          <li>
-            <a href="index.html">Home</a>
-          </li>
-          <li>
-            <a href="about.html">About Us</a>
-          </li>
-          <li>
-            <a href="plan-your-visit.html">Plan Your Visit</a>
-          </li>
-          <li>
-            <a href="booking-form.html">Book Appointment</a>
-          </li>
-        </ul>
-      </div>
-      <div class="contact-us">
-        <p class="footer-title">Contact Us</p>
-        <div class="phone">
-          <img src="assets/svg/phone.svg" alt="Phone Icon" />
-          <p>021 - 98765</p>
-        </div>
-        <div class="email">
-          <img src="assets/svg/message.svg" alt="Message Icon" />
-          <p>ourorthos@gmail.com</p>
-        </div>
-      </div>
-      <div class="follow">
-        <p class="footer-title">Follow Us On</p>
-        <div class="sosmed-icon">
-          <a href="whatsapp.com">
-            <img src="assets/svg/whatsapp.svg" alt="Whatsapp Icon" />
-          </a>
-          <a href="instagram.com">
-            <img src="assets/svg/instagram.svg" alt="Instagram Icon" />
-          </a>
-          <a href="facebook.com">
-            <img src="assets/svg/facebook.svg" alt="Facebook Icon" />
-          </a>
-        </div>
-      </div>
-      <div class="copyright">
-        <p>© 2023 Our Orthos</p>
-      </div>
-    </footer>
+    </div>
+    <div class="copyright">
+      <p>© 2023 Our Orthos</p>
+    </div>
+  </footer>
 
-    <script src="./js/main.js"></script>
-  </body>
+  <script src="./js/main.js"></script>
+</body>
+
 </html>
