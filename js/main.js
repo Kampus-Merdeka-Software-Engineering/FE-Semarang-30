@@ -462,7 +462,7 @@ if (currentPage === "/FE-Semarang-30/login.html") {
 
           window.location.href = "/FE-Semarang-30/index.html";
         } else {
-          console.error("Error fetching times:", error);
+          console.error("Error:", error);
         }
       });
   });
