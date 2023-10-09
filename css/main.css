@@ -474,6 +474,13 @@ footer .copyright {
   gap: 2px;
 }
 
+.containerdiv1-6 img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  /* transform: scale(0.9); */
+}
+
 .containerdiv1-6 {
   margin-bottom: 115px;
 }
@@ -485,11 +492,10 @@ footer .copyright {
   /* transform: scale(0.9); */
 }
 
-.title-award h2{
+.title-award h2 {
   font-size: 2.2rem;
   font-weight: bold;
 }
-
 
 /* END OF ABOUT US HTML */
 
@@ -673,6 +679,8 @@ button {
   min-width: 2rem;
   padding: 0.3rem 0.94rem;
   font-weight: bold;
+  cursor: pointer;
+  border: none;
 }
 
 /* END OF LIST DOCTOR */
@@ -1153,7 +1161,7 @@ input[type="password"] {
     border-radius: 10px;
     margin-bottom: 50px;
     margin-top: 70px;
-    gap: 100px;
+    gap: 50px;
     font-size: 0.7rem;
   }
 
@@ -1193,7 +1201,6 @@ input[type="password"] {
 
 /* Tablet */
 @media (max-width: 767.98px) {
-
   /* ERNA STYLE */
   /* START OF INDEX STYLE */
   .erna-hero-section {
@@ -1256,7 +1263,8 @@ input[type="password"] {
   }
 
   .what-to-do .steps .step .step-container .step-title p {
-    border-image: linear-gradient(to right, var(--third) 100%, transparent 100%) 1;
+    border-image: linear-gradient(to right, var(--third) 100%, transparent 100%)
+      1;
     margin: auto;
   }
 
@@ -1320,7 +1328,7 @@ input[type="password"] {
     border-radius: 10px;
     margin-bottom: 0px;
     margin-top: 50px;
-    gap: 90px;
+    gap: 0px;
     font-size: 0.6rem;
   }
 
@@ -1475,7 +1483,6 @@ input[type="password"] {
     border-radius: 10px;
     margin-bottom: 0px;
     margin-top: 50px;
-    gap: 10vw;
     font-size: 0.5rem;
   }
 
@@ -1493,10 +1500,6 @@ input[type="password"] {
   .header-username {
     font-size: 1rem;
     text-align: center;
-  }
-
-  .container-account-booked {
-    flex-direction: column;
   }
 
   .container-account th {

@@ -28,11 +28,18 @@ overlay.addEventListener("click", () => {
 });
 
 // Navbar check if user logged in
-const user_id = sessionStorage.getItem("user_id");
+// Mendapatkan nilai cookie 'user_id'
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(";").shift();
+}
+
+const userUsername = getCookie("user_username");
 
 const navbarProfile = document.querySelector(".navbar-login");
-if (user_id) {
-  navbarProfile.innerHTML = `<a href="profile-page.html" class="login">${user_id}</a>`;
+if (userUsername) {
+  navbarProfile.innerHTML = `<a href="profile-page.html" class="login">${userUsername}</a>`;
 } else {
   navbarProfile.innerHTML = `<a href="login.html" class="login">Login</a>`;
 }
@@ -40,246 +47,239 @@ if (user_id) {
 // For specific pages
 const currentPage = window.location.pathname;
 
-// SET INTERVAL FOR CAROUSEL SERVIVES
+if (
+  currentPage === "/FE-Semarang-30/" ||
+  currentPage === "/FE-Semarang-30/index.html" ||
+  currentPage === "/FE-Semarang-30/about.html"
+) {
+  // SET INTERVAL FOR CAROUSEL SERVIVES
 
-const carousel = document.querySelector(".carousel");
-const services = document.querySelectorAll(".service");
-const serviceCount = services.length;
+  const carousel = document.querySelector(".carousel");
+  const services = document.querySelectorAll(".service");
+  const serviceCount = services.length;
 
-let currentIndex = 0;
-const intervalTime = 5000; // Change slide every 5 seconds
+  let currentIndex = 0;
+  const intervalTime = 5000; // Change slide every 5 seconds
 
-function nextService() {
-  services[currentIndex].classList.remove("active");
-  currentIndex = (currentIndex + 1) % serviceCount;
-  services[currentIndex].classList.add("active");
-  updateCarousel();
+  function nextService() {
+    services[currentIndex].classList.remove("active");
+    currentIndex = (currentIndex + 1) % serviceCount;
+    services[currentIndex].classList.add("active");
+    updateCarousel();
+  }
+
+  function updateCarousel() {
+    const translateXValue = -currentIndex * 100;
+    carousel.style.transform = `translateX(${translateXValue}%)`;
+  }
+
+  setInterval(nextService, intervalTime);
 }
 
-function updateCarousel() {
-  const translateXValue = -currentIndex * 100;
-  carousel.style.transform = `translateX(${translateXValue}%)`;
-}
+if (currentPage === "/FE-Semarang-30/plan-your-visit.html") {
+  // Accordion
+  const labels = document.querySelectorAll(".label");
 
-setInterval(nextService, intervalTime);
+  labels.forEach(function (label) {
+    label.addEventListener("click", function () {
+      this.classList.toggle("active");
+      const content = this.nextElementSibling;
 
-// Accordion
-const labels = document.querySelectorAll(".label");
-
-labels.forEach(function (label) {
-  label.addEventListener("click", function () {
-    this.classList.toggle("active");
-    const content = this.nextElementSibling;
-
-    content.style.maxHeight =
-      !content.style.maxHeight || content.style.maxHeight === "0px"
-        ? content.scrollHeight + "px"
-        : "0px";
+      content.style.maxHeight =
+        !content.style.maxHeight || content.style.maxHeight === "0px"
+          ? content.scrollHeight + "px"
+          : "0px";
+    });
   });
-});
+}
 
 //list doctor
 
-const doctorData = [
-  {
-    name: "drg. Wisis Arif Setiawan K D, Sp.KGA (Pedodonti/Gigi Anak)",
-    schedule: ["Senin - Rabu : 09.00 - 14.00", "Kamis - Jumat : 15.00 - 19.00"],
-  },
-  {
-    name: "drg. Zahra Maysani",
-    schedule: ["Senin - Rabu : 09.00 - 14.00", "Kamis - Jumat : 15.00 - 19.00"],
-  },
-  {
-    name: "drg. Erna Listiana Dewi, MPH",
-    schedule: ["Senin - Rabu : 09.00 - 14.00", "Kamis - Jumat : 15.00 - 19.00"],
-  },
-  {
-    name: "drg. Rafaell Victor Christian, Sp.KG",
-    schedule: ["Senin - Rabu : 15.00 - 19.00", "Kamis - Jumat : 09.00 - 14.00"],
-  },
-  {
-    name: "drg. Andhika Hanif Prasetyo K Sp.KGA",
-    schedule: ["Senin - Rabu : 15.00 - 19.00", "Kamis - Jumat : 09.00 - 14.00"],
-  },
-  {
-    name: "drg. Anggita Prameswari K Sp.KGA",
-    schedule: ["Senin - Rabu : 15.00 - 19.00", "Kamis - Jumat : 09.00 - 14.00"],
-  },
+if (currentPage === "/FE-Semarang-30/list-doctor.html") {
+  const doctorData = [
+    {
+      name: "drg. Wisis Arif Setiawan K D, Sp.KGA (Pedodonti/Gigi Anak)",
+      schedule: [
+        "Senin - Rabu : 09.00 - 14.00",
+        "Kamis - Jumat : 15.00 - 19.00",
+      ],
+    },
+    {
+      name: "drg. Zahra Maysani",
+      schedule: [
+        "Senin - Rabu : 09.00 - 14.00",
+        "Kamis - Jumat : 15.00 - 19.00",
+      ],
+    },
+    {
+      name: "drg. Erna Listiana Dewi, MPH",
+      schedule: [
+        "Senin - Rabu : 09.00 - 14.00",
+        "Kamis - Jumat : 15.00 - 19.00",
+      ],
+    },
+    {
+      name: "drg. Rafaell Victor Christian, Sp.KG",
+      schedule: [
+        "Senin - Rabu : 15.00 - 19.00",
+        "Kamis - Jumat : 09.00 - 14.00",
+      ],
+    },
+    {
+      name: "drg. Andhika Hanif Prasetyo K Sp.KGA",
+      schedule: [
+        "Senin - Rabu : 15.00 - 19.00",
+        "Kamis - Jumat : 09.00 - 14.00",
+      ],
+    },
+    {
+      name: "drg. Anggita Prameswari K Sp.KGA",
+      schedule: [
+        "Senin - Rabu : 15.00 - 19.00",
+        "Kamis - Jumat : 09.00 - 14.00",
+      ],
+    },
 
-  // Tambahkan data dokter dan jadwal lainnya di sini
-];
-// Fungsi untuk menampilkan jadwal dokter
-function showDoctorSchedule(index) {
-  const schedule = doctorData[index].schedule;
-  const jadwalContainer = document.getElementById("jadwal-dokter");
-  const namaDokter = document.getElementById("nama-dokter");
+    // Tambahkan data dokter dan jadwal lainnya di sini
+  ];
+  // Fungsi untuk menampilkan jadwal dokter
+  function showDoctorSchedule(index) {
+    const schedule = doctorData[index].schedule;
+    const jadwalContainer = document.getElementById("jadwal-dokter");
+    const namaDokter = document.getElementById("nama-dokter");
 
-  // Menampilkan nama dokter di samping h3 "Jadwal Dokter"
-  namaDokter.textContent = doctorData[index].name;
+    // Menampilkan nama dokter di samping h3 "Jadwal Dokter"
+    namaDokter.textContent = doctorData[index].name;
 
-  jadwalContainer.innerHTML = ""; // Menghapus semua elemen di dalam jadwalContainer sebelum menambahkan yang baru
+    jadwalContainer.innerHTML = ""; // Menghapus semua elemen di dalam jadwalContainer sebelum menambahkan yang baru
 
-  schedule.forEach((data) => {
-    const listschedul = document.createElement("p");
-    listschedul.textContent = data;
+    schedule.forEach((data) => {
+      const listschedul = document.createElement("p");
+      listschedul.textContent = data;
 
-    // Menambahkan event listener untuk menghapus elemen saat diklik
-    listschedul.addEventListener("click", function () {
-      jadwalContainer.removeChild(listschedul);
+      // Menambahkan event listener untuk menghapus elemen saat diklik
+      listschedul.addEventListener("click", function () {
+        jadwalContainer.removeChild(listschedul);
+      });
+
+      jadwalContainer.appendChild(listschedul);
     });
+  }
 
-    jadwalContainer.appendChild(listschedul);
-  });
+  // Fungsi untuk mengisi daftar dokter
+  function populateDoctorList() {
+    const doctorList = document.getElementById("doctor-list");
+    doctorData.forEach((doctor, index) => {
+      const listItem = document.createElement("li");
+      listItem.textContent = doctor.name;
+      listItem.addEventListener("click", () => showDoctorSchedule(index));
+      doctorList.appendChild(listItem);
+    });
+  }
+
+  // Panggil fungsi untuk mengisi daftar dokter saat halaman dimuat
+  window.addEventListener("load", populateDoctorList);
 }
-
-// Fungsi untuk mengisi daftar dokter
-function populateDoctorList() {
-  const doctorList = document.getElementById("doctor-list");
-  doctorData.forEach((doctor, index) => {
-    const listItem = document.createElement("li");
-    listItem.textContent = doctor.name;
-    listItem.addEventListener("click", () => showDoctorSchedule(index));
-    doctorList.appendChild(listItem);
-  });
-}
-
-// Panggil fungsi untuk mengisi daftar dokter saat halaman dimuat
-window.addEventListener("load", populateDoctorList);
-
-// Punya Ara
-
-document.addEventListener("DOMContentLoaded", function () {
-  const registrationForm = document.getElementById(".register-container");
-  const usernameInput = document.getElementById("username");
-  const emailInput = document.getElementById("email");
-  const passwordInput = document.getElementById("password");
-
-  registrationForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const username = usernameInput.value;
-    const password = passwordInput.value;
-    const email = emailInput.value;
-
-    // Validasi password dan konfirmasi password
-    if (password !== confirmPassword) {
-      alert("Password dan konfirmasi password tidak cocok.");
-      return;
-    }
-
-    // Validasi panjang minimal password (minimal 8 karakter)
-    if (password.length < 8) {
-      alert("Password harus memiliki minimal 8 karakter.");
-      return;
-    }
-
-    // Validasi penggunaan karakter khusus dalam password
-    if (!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/.test(password)) {
-      alert("Password harus mengandung setidaknya satu karakter khusus.");
-      return;
-    }
-
-    // Validasi penggunaan huruf besar (uppercase) dalam password
-    if (!/[A-Z]/.test(password)) {
-      alert(
-        "Password harus mengandung setidaknya satu huruf besar (uppercase)."
-      );
-      return;
-    }
-
-    // Validasi penggunaan huruf kecil (lowercase) dalam password
-    if (!/[a-z]/.test(password)) {
-      alert(
-        "Password harus mengandung setidaknya satu huruf kecil (lowercase)."
-      );
-      return;
-    }
-
-    // Lakukan pendaftaran pengguna atau kirim data ke server sesuai logika aplikasi Anda
-    alert("Registrasi berhasil!");
-  });
-});
 
 // Profile
-if (currentPage === "/profile-page.html") {
-  const user_id = sessionStorage.getItem("user_id");
+if (currentPage === "/FE-Semarang-30/profile-page.html") {
+  // Mendapatkan nilai cookie 'user_id'
+  function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(";").shift();
+  }
 
-  console.log(user_id);
+  // Menggunakan fungsi getCookie untuk mendapatkan nilai 'user_id'
+  const user_id = getCookie("user_id");
+  if (user_id) {
+    const getHiUsername = document.querySelector("#hiUsername");
+    const getUsername = document.querySelector("#username");
+    const getEmail = document.querySelector("#email");
 
-  const getHiUsername = document.querySelector("#hiUsername");
-  const getUsername = document.querySelector("#username");
-  const getEmail = document.querySelector("#email");
+    const getDentist = document.querySelector("#dentist");
+    const getDate = document.querySelector("#date");
+    const getTime = document.querySelector("#time");
 
-  const getDentist = document.querySelector("#dentist");
-  const getDate = document.querySelector("#date");
-  const getTime = document.querySelector("#time");
-
-  const getAppointment = document.querySelector("#getAppointment");
-
-  fetch(`http://localhost:3000/users?user_id=${user_id}`)
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error("Network response was not ok");
-      }
-    })
-    .then((data) => {
-      if (data) {
-        console.log(data);
-        getHiUsername.textContent = `Hi, ${data.user_username}`;
-        getUsername.textContent = `${data.user_username}`;
-        getEmail.textContent = `${data.user_email}`;
-      } else {
-        window.location.href = "/login.html";
-      }
-    });
-
-  fetch(`http://localhost:3000/appointments/find?user_id=${user_id}`)
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error("Network response was not ok");
-      }
-    })
-    .then((data) => {
-      if (data.length > 0) {
-        const appointments = data[0];
-
-        getDentist.textContent = `${appointments.dentist_name}`;
-        getDate.textContent = `${appointments.schedule_date_date}`;
-        getTime.textContent = `${appointments.schedule_time_start} - ${appointments.schedule_time_end}`;
-      } else {
-      }
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
-
-  const logoutButton = document.querySelector("#logoutButton");
-  logoutButton.addEventListener("click", () => {
-    fetch(`http://localhost:3000/users/logout`)
+    fetch(
+      `https://be-semarang-30-production.up.railway.app/users?user_id=${user_id}`
+    )
       .then((response) => {
         if (response.ok) {
-          sessionStorage.removeItem("user_id");
-          window.location.href = `/login.html`;
+          return response.json();
         } else {
-          throw new Error("Logout failed");
+          throw new Error("Network response was not ok");
+        }
+      })
+      .then((data) => {
+        if (data) {
+          getHiUsername.textContent = `Hi, ${data.user_username}`;
+          getUsername.textContent = `${data.user_username}`;
+          getEmail.textContent = `${data.user_email}`;
+        } else {
+          window.location.href = "/FE-Semarang-30/login.html";
+        }
+      });
+
+    fetch(
+      `https://be-semarang-30-production.up.railway.app/appointments/find?user_id=${user_id}`
+    )
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Network response was not ok");
+        }
+      })
+      .then((data) => {
+        if (data.length > 0) {
+          const appointments = data[0];
+
+          getDentist.textContent = `${appointments.dentist_name}`;
+          getDate.textContent = `${appointments.schedule_date_date}`;
+          getTime.textContent = `${appointments.schedule_time_start} - ${appointments.schedule_time_end}`;
+        } else {
         }
       })
       .catch((error) => {
-        console.error("Error logging out:", error);
+        console.error("Error:", error);
       });
-  });
+
+    // Mendapatkan tombol logout berdasarkan ID atau class
+    const logoutButton = document.getElementById("logoutButton"); // Ganti 'logoutButton' dengan ID atau class yang sesuai
+
+    // Menambahkan event listener ke tombol logout
+    logoutButton.addEventListener("click", function () {
+      // Menghapus semua cookie
+      const cookies = document.cookie.split(";");
+      for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i];
+        const eqPos = cookie.indexOf("=");
+        const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        document.cookie =
+          name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
+      }
+
+      // Mengarahkan pengguna kembali ke halaman login
+      window.location.href = "/FE-Semarang-30/login.html"; // Ganti '/login.html' dengan URL halaman login Anda
+    });
+  } else {
+    window.location.href = "/FE-Semarang-30/login.html";
+  }
 }
 
 // Booking Form
-if (currentPage === "/booking-form.html") {
-  const user_id = sessionStorage.getItem("user_id");
-  console.log(user_id);
+if (currentPage === "/FE-Semarang-30/booking-form.html") {
+  // Mendapatkan nilai cookie 'user_id'
+  function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(";").shift();
+  }
+
+  // Menggunakan fungsi getCookie untuk mendapatkan nilai 'user_id'
+  const user_id = getCookie("user_id");
   if (user_id) {
-    console.log(user_id);
     // Dentist select
     let selectDentist = document.querySelector("#selectDentist");
     // Date select
@@ -299,7 +299,7 @@ if (currentPage === "/booking-form.html") {
     ];
 
     // Fetch dentist api
-    fetch("http://localhost:3000/dentists")
+    fetch("https://be-semarang-30-production.up.railway.app/dentists")
       .then((response) => response.json())
       .then((data) => {
         data.forEach((dentists) => {
@@ -314,7 +314,7 @@ if (currentPage === "/booking-form.html") {
       });
 
     // Fetch date api
-    fetch("http://localhost:3000/schedule_dates")
+    fetch("https://be-semarang-30-production.up.railway.app/schedule_dates")
       .then((response) => response.json())
       .then((data) => {
         data.forEach((schedule_dates) => {
@@ -330,12 +330,8 @@ if (currentPage === "/booking-form.html") {
 
     // Fetch time api
     function fetchTime(dentist_id, dentist_schedule_day) {
-      console.log(
-        `http://localhost:3000/schedule_times/dentist_schedules?dentist_id=${dentist_id}&dentist_schedule_day=${dentist_schedule_day}`
-      );
-
       fetch(
-        `http://localhost:3000/schedule_times/dentist_schedules?dentist_id=${dentist_id}&dentist_schedule_day=${dentist_schedule_day}`
+        `https://be-semarang-30-production.up.railway.app/schedule_times/dentist_schedules?dentist_id=${dentist_id}&dentist_schedule_day=${dentist_schedule_day}`
       )
         .then((response) => {
           if (response.ok) {
@@ -367,8 +363,6 @@ if (currentPage === "/booking-form.html") {
       let date = selectedDate.getDay();
 
       const selectedDay = dayNames[date];
-      console.log(selectedDentist, selectedDay);
-
       fetchTime(selectedDentist, selectedDay);
     });
 
@@ -380,8 +374,6 @@ if (currentPage === "/booking-form.html") {
       let date = selectedDate.getDay();
 
       const selectedDay = dayNames[date];
-      console.log(selectedDentist, selectedDay);
-
       fetchTime(selectedDentist, selectedDay);
     });
 
@@ -407,7 +399,7 @@ if (currentPage === "/booking-form.html") {
       ) {
         alert("Please choose dentist, date, and time!");
       } else {
-        fetch("http://localhost:3000/appointments", {
+        fetch("https://be-semarang-30-production.up.railway.app/appointments", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -423,7 +415,7 @@ if (currentPage === "/booking-form.html") {
           .then((response) => {
             if (response.ok) {
               alert("Appointment booked!");
-              window.location.href = "/index.html";
+              window.location.href = "/FE-Semarang-30/index.html";
             } else {
               alert("Book appointment failed!");
             }
@@ -434,12 +426,12 @@ if (currentPage === "/booking-form.html") {
       }
     });
   } else {
-    window.location.href = "/login.html";
+    window.location.href = "/FE-Semarang-30/login.html";
   }
 }
 
 // Login
-if (currentPage === "/login.html") {
+if (currentPage === "/FE-Semarang-30/login.html") {
   const loginForm = document.querySelector("#loginForm");
 
   loginForm.addEventListener("submit", (event) => {
@@ -449,7 +441,7 @@ if (currentPage === "/login.html") {
     const loginPassword = document.querySelector("#form-password").value;
 
     fetch(
-      `http://localhost:3000/users/login?user_email=${loginEmail}&user_password=${loginPassword}`
+      `https://be-semarang-30-production.up.railway.app/users/login?user_email=${loginEmail}&user_password=${loginPassword}`
     )
       .then((response) => {
         if (response.ok) {
@@ -460,21 +452,26 @@ if (currentPage === "/login.html") {
         }
       })
       .then((data) => {
-        if (data.user_id) {
+        if (data.user_id && data.user_username) {
           const user_id = data.user_id;
-          sessionStorage.setItem("user_id", user_id);
-          window.location.href = "/index.html";
+          const user_username = data.user_username;
 
-          console.log("Logged in user id:", user_id);
+          // Mengatur cookie untuk user_id
+          document.cookie = `user_id=${user_id}; expires=Thu, 01 Jan 2099 00:00:00 UTC; path=/`;
+
+          // Mengatur cookie untuk user_username
+          document.cookie = `user_username=${user_username}; expires=Thu, 01 Jan 2099 00:00:00 UTC; path=/`;
+
+          window.location.href = "/FE-Semarang-30/index.html";
         } else {
-          console.error("Error fetching times:", error);
+          console.error("Error:", error);
         }
       });
   });
 }
 
 // Register
-if (currentPage === "/register.html") {
+if (currentPage === "/FE-Semarang-30/register.html") {
   const registrationForm = document.querySelector("#registrationForm");
 
   registrationForm.addEventListener("submit", (event) => {
@@ -483,14 +480,10 @@ if (currentPage === "/register.html") {
     const username = document.querySelector("#form-username").value;
     const email = document.querySelector("#form-email").value;
     const password = document.querySelector("#form-password").value;
-    // const passwordSafety = document.querySelector("#email");
-    // passwordSafety.onkeyup = () => {
-    //   if (password.value) {
-    //   } else {
-    //   }
-    // };
 
-    fetch(`http://localhost:3000/users/email?user_email=${email}`)
+    fetch(
+      `https://be-semarang-30-production.up.railway.app/users/email?user_email=${email}`
+    )
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -503,11 +496,11 @@ if (currentPage === "/register.html") {
           alert("Email has already been used!");
         } else {
           if (password.length < 5) {
-            alert("Minimum password length is 8 characters");
+            alert("Minimum password length is 5 characters");
           } else if (!/[A-Z]/.test(password) || !/[a-z]/.test(password)) {
             alert("Please use a combination of uppercase and lowercase");
           } else {
-            fetch("http://localhost:3000/users", {
+            fetch("https://be-semarang-30-production.up.railway.app/users", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -522,7 +515,7 @@ if (currentPage === "/register.html") {
               .then((response) => {
                 if (response.ok) {
                   alert("Registrasi berhasil");
-                  window.location.href = "/login.html";
+                  window.location.href = "/FE-Semarang-30/login.html";
                 } else {
                   alert("Registrasi gagal");
                 }
