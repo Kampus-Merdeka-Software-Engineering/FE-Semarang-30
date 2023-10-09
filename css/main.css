@@ -474,6 +474,13 @@ footer .copyright {
   gap: 2px;
 }
 
+.containerdiv1-6 img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  /* transform: scale(0.9); */
+}
+
 .containerdiv1-6 {
   margin-bottom: 115px;
 }
