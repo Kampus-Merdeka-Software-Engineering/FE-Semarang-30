@@ -76,7 +76,7 @@ if (
   setInterval(nextService, intervalTime);
 }
 
-if (currentPage === "/FE-Semarang-30/plan-your-visit.html" {
+if (currentPage === "/FE-Semarang-30/plan-your-visit.html") {
   // Accordion
   const labels = document.querySelectorAll(".label");
 
