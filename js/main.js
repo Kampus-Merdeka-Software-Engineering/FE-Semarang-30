@@ -156,12 +156,6 @@ if (currentPage === "/FE-Semarang-30/list-doctor.html") {
     schedule.forEach((data) => {
       const listschedul = document.createElement("p");
       listschedul.textContent = data;
-
-      // Menambahkan event listener untuk menghapus elemen saat diklik
-      listschedul.addEventListener("click", function () {
-        jadwalContainer.removeChild(listschedul);
-      });
-
       jadwalContainer.appendChild(listschedul);
     });
   }
